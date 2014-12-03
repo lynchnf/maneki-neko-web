@@ -173,7 +173,11 @@ CMS_TEMPLATES = (
 
 CMS_PERMISSION = True
 
-CMS_PLACEHOLDER_CONF = {}
+CMS_PLACEHOLDER_CONF = {
+    'google_analytics': {
+        'plugins': ['GoogleAnalyticsPlugin']
+    }
+}
 
 DATABASES = {
     'default':
