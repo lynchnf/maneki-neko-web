@@ -1,0 +1,47 @@
+/* Make the drop-down menus hoverable for medium and large sizes. */
+@media ( min-width : 992px) {
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
+}
+
+/* Make the 3rd (and lower) level menus drop down sideways. */
+@media ( min-width : 768px) {
+    .dropdown>.dropdown-menu>.dropdown>.dropdown-menu {
+        top: -8px; /* This looks like it lines up to me. */
+        left: 100%;
+    }
+}
+
+/* For mobile size, put padding on <li>, not <a>. */
+.nav>li {
+    padding-left: 15px;
+}
+
+.nav>li li {
+    padding-left: 15px;
+}
+
+.nav>li>a {
+    padding-left: 0;
+}
+
+.navbar-nav .open .dropdown-menu>li>a {
+    padding-left: 0;
+}
+
+/* For other sizes, put it back the way we found it. */
+@media ( min-width : 768px) {
+    .nav>li {
+        padding-left: 0;
+    }
+    .nav>li li {
+        padding-left: 0;
+    }
+    .nav>li>a {
+        padding-left: 15px;
+    }
+    .navbar-nav .open .dropdown-menu>li>a {
+        padding-left: 20px;
+    }
+}

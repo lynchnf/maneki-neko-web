@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+
+{% block content %}
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-5 col-sm-6">
+                    <div id="logo-1">Maneki</div>
+                    <div id="logo-2">Neko</div>
+                    <div id="logo-3">Con</div>
+                </div>
+                <div class="when-where col-lg-5 col-md-7 col-sm-6">
+                    Oct 9<sup>th</sup> - 11<sup>th</sup>, 2015<br>in Matteson, IL
+                </div>
+                <div class="social col-lg-3 col-md-3 col-sm-4 pull-right">
+                    <a href="#" title="Facebook"><i class="fa fa-facebook fa-3x"></i></a> <a href="#" title="Google Plus"><i class="fa fa-google-plus fa-3x"></i></a> <a href="#" title="Reddit"><i class="fa fa-reddit fa-3x"></i></a> <a href="#" title="Twitter"><i class="fa fa-twitter fa-3x"></i></a>
+                </div>
+                <div class="clearfix visible-xs-block"></div>
+                <div class="register-now  col-lg-8 col-md-7 col-sm-6 text-center">
+                    <label>Register now</label>
+                    <a href="other.html?option=Attendee" class="btn btn-default">as an Attendee</a>
+                    <a href="other.html?option=Vendor" class="btn btn-default">as a Vendor</a>
+                    <a href="other.html?option=Artist" class="btn btn-default">as an Artist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row content">
+            <div class="col-xs-12">
+                {% placeholder "content" %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

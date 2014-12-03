@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+
+{% block content %}
+    <div class="header">
+        <div class="container">
+            <div id="logo-4">Maneki Neko Con</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row content">
+            <div class="col-xs-12">
+                {% placeholder "content" %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
