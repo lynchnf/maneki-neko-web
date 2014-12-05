@@ -1,18 +1,18 @@
 @default-background-color: #999999;
 
+@navigation-background-color: #333333;
+@navigation-text-color: difference(#ffffff, @navigation-background-color);
+@navigation-background-accent-color: @navigation-text-color;
+@navigation-text-accent-color: @navigation-background-color;
+@navigation-background-muted-color: transparent;
+@navigation-text-muted-color: darken(@navigation-text-color, 40%);
+
 @header-background-color: #666666;
 @header-text-color: difference(#ffffff, @header-background-color);
 @header-background-accent-color: transparent;
-@header-text-accent-color: #333333;
+@header-text-accent-color: @navigation-background-color;
 @header-background-muted-color: transparent;
-@header-text-muted-color: #999999;
-
-@footer-background-color: #333333;
-@footer-text-color: difference(#ffffff, @footer-background-color);
-@footer-background-accent-color: @footer-text-color;
-@footer-text-accent-color: @footer-background-color;
-@footer-background-muted-color: transparent;
-@footer-text-muted-color: darken(@footer-text-color, 40%);
+@header-text-muted-color: @default-background-color;
 
 @content-background-color: #cccccc;
 @content-text-color: difference(#ffffff, @content-background-color);
@@ -21,12 +21,12 @@
 @content-background-muted-color: transparent;
 @content-text-muted-color: lighten(@content-text-color, 40%);
 
-@navigation-background-color: #333333;
-@navigation-text-color: difference(#ffffff, @navigation-background-color);
-@navigation-background-accent-color: @navigation-text-color;
-@navigation-text-accent-color: @navigation-background-color;
-@navigation-background-muted-color: transparent;
-@navigation-text-muted-color: darken(@navigation-text-color, 40%);
+@footer-background-color: @navigation-background-color;
+@footer-text-color: difference(#ffffff, @footer-background-color);
+@footer-background-accent-color: @footer-text-color;
+@footer-text-accent-color: @footer-background-color;
+@footer-background-muted-color: transparent;
+@footer-text-muted-color: darken(@footer-text-color, 40%);
 
 @default-font: 'Exo 2', sans-serif;
 @accent-font: 'Audiowide', cursive;
@@ -37,154 +37,8 @@ body {
     font-family: @default-font;
 }
 
-/* Header */
-.header {
-    background-color: @header-background-color;
-    border-bottom: 10px solid @navigation-background-color;
-    color: @header-text-color;
-    padding-top: 55px;
-
-    a,
-    a:focus {
-        background-color: @header-background-muted-color;
-        color: @header-text-muted-color
-    }
-
-    a:hover {
-        background-color: @header-background-accent-color;
-        color: @header-text-accent-color;
-    }
-}
-
-@logo-base-size: 64px;
-
-#logo-1 {
-    color: @navigation-background-color;
-    font-family: @accent-font;
-    font-size: @logo-base-size;
-    font-weight: bold;
-    letter-spacing: .25em;
-    line-height: .75em;
-    padding-top: 10px;
-    text-align: center;
-}
-
-#logo-2 {
-    color: @navigation-background-color;
-    font-family: @accent-font;
-    font-size: @logo-base-size * 1.4;
-    font-weight: bold;
-    letter-spacing: .25em;
-    line-height: .75em;
-    text-align: center;
-}
-
-#logo-3 {
-    color: @navigation-background-color;
-    font-family: @accent-font;
-    font-size: @logo-base-size * 2;
-    font-weight: bold;
-    letter-spacing: .25em;
-    line-height: .75em;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-#logo-4 {
-    font-family: @accent-font;
-    font-size: @logo-base-size;
-    font-weight: bold;
-    letter-spacing: .25em;
-    line-height: .75em;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    text-align: center;
-}
-
-.social {
-    letter-spacing: .33em;
-}
-
-.when-where {
-    float: left;
-    font-family: @accent-font;
-    font-size: 32px;
-}
-
-.register-now {
-    margin-bottom: 15px;
-    margin-top: 15px;
-
-    label {
-        display: block;
-        font-family: @accent-font;
-        font-size: 24px;
-    }
-
-    .btn,
-    .btn:focus {
-        background-color: @navigation-background-color;
-        border-color: @navigation-text-muted-color;
-        color: @navigation-text-color;
-    }
-    
-    .btn:hover {
-        background-color: @navigation-background-accent-color;
-        color: @navigation-text-accent-color;
-    }
-}
-
-@media (min-width: 1200px) {
-    .register-now {
-        margin-top: 50px;
-    }
-}
-
- /* Footer */
- .footer {
-    background-color: @footer-background-color;
-    color: @footer-text-color;
-    text-align: center;
-    
-    a,
-    a:focus {
-        background-color: @footer-background-muted-color;
-        color: @footer-text-muted-color
-    }
-
-    a:hover {
-        background-color: @footer-background-accent-color;
-        color: @footer-text-accent-color;
-    }
-}
-
- /* Content */
- .content {
-    background-color: @content-background-color;
-    color: @content-text-color;
-    
-    h1, h2, h3, h4, h5, h6 {
-        font-family: @accent-font;
-        
-        small {
-            color: @content-text-muted-color;
-        }
-    }
-    
-    a,
-    a:focus {
-        background-color: @content-background-muted-color;
-        color: @content-text-muted-color
-    }
-
-    a:hover {
-        background-color: @content-background-accent-color;
-        color: @content-text-accent-color;
-    }
-}
- 
- /* Navigation Styles */
- .navbar-default {
+/* Navigation Styles */
+.navbar-default {
     background-color: @navigation-background-color;
     border-color: @navigation-text-muted-color;
 }
@@ -273,5 +127,151 @@ body {
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
         background-color: @navigation-background-accent-color;
         color: @navigation-text-accent-color;
+    }
+}
+
+/* Header */
+.header {
+    background-color: @header-background-color;
+    border-bottom: 10px solid @navigation-background-color;
+    color: @header-text-color;
+    padding-top: 55px;
+
+    a,
+    a:focus {
+        background-color: @header-background-muted-color;
+        color: @header-text-muted-color
+    }
+
+    a:hover {
+        background-color: @header-background-accent-color;
+        color: @header-text-accent-color;
+    }
+}
+
+@logo-base-size: 64px;
+
+#logo-1 {
+    color: @header-text-accent-color;
+    font-family: @accent-font;
+    font-size: @logo-base-size;
+    font-weight: bold;
+    letter-spacing: .25em;
+    line-height: .75em;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#logo-2 {
+    color: @header-text-accent-color'
+    font-family: @accent-font;
+    font-size: @logo-base-size * 1.4;
+    font-weight: bold;
+    letter-spacing: .25em;
+    line-height: .75em;
+    text-align: center;
+}
+
+#logo-3 {
+    color: @header-text-accent-color;
+    font-family: @accent-font;
+    font-size: @logo-base-size * 2;
+    font-weight: bold;
+    letter-spacing: .25em;
+    line-height: .75em;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#logo-4 {
+    font-family: @accent-font;
+    font-size: @logo-base-size;
+    font-weight: bold;
+    letter-spacing: .25em;
+    line-height: .75em;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.social {
+    letter-spacing: .33em;
+}
+
+.when-where {
+    float: left;
+    font-family: @accent-font;
+    font-size: 32px;
+}
+
+.register-now {
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+    label {
+        display: block;
+        font-family: @accent-font;
+        font-size: 24px;
+    }
+
+    .btn,
+    .btn:focus {
+        background-color: @navigation-background-color;
+        border-color: @navigation-text-muted-color;
+        color: @navigation-text-color;
+    }
+    
+    .btn:hover {
+        background-color: @navigation-background-accent-color;
+        color: @navigation-text-accent-color;
+    }
+}
+
+@media (min-width: 1200px) {
+    .register-now {
+        margin-top: 50px;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: @footer-background-color;
+    color: @footer-text-color;
+    text-align: center;
+    
+    a,
+    a:focus {
+        background-color: @footer-background-muted-color;
+        color: @footer-text-muted-color
+    }
+
+    a:hover {
+        background-color: @footer-background-accent-color;
+        color: @footer-text-accent-color;
+    }
+}
+
+/* Content */
+.content {
+    background-color: @content-background-color;
+    color: @content-text-color;
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: @accent-font;
+        
+        small {
+            color: @content-text-muted-color;
+        }
+    }
+    
+    a,
+    a:focus {
+        background-color: @content-background-muted-color;
+        color: @content-text-muted-color
+    }
+
+    a:hover {
+        background-color: @content-background-accent-color;
+        color: @content-text-accent-color;
     }
 }
