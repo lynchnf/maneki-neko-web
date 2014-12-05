@@ -68,6 +68,8 @@ Follow the instructions below to checkout the project and set up a development e
 11. Build and run project.
   - `cd ~/workspace/maneki-neko-web`
   - `pip install -r requirements.txt`
+  - `python manage.py syncdb --all --noinput`
+  - `python manage.py migrate --fake`
   - `python manage.py loaddata website/fixtures/first.json`
   - `python manage.py runserver`
   - Browse localhost:8000
