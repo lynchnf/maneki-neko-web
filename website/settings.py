@@ -1,4 +1,5 @@
 import os
+import env_settings
 gettext = lambda s: s
 """
 Django settings for website project.
@@ -11,7 +12,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -19,21 +19,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&d1#ne%8(2$rcu5wn9pibbmoud8g14j@@y$fi_%))@7upw&v7('
+SECRET_KEY = env_settings.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env_settings.DEBUG
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = env_settings.TEMPLATE_DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env_settings.ALLOWED_HOSTS
 
 
 # Application definition
-
-
-
-
 
 ROOT_URLCONF = 'website.urls'
 
@@ -43,6 +39,7 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+DATABASES = env_settings.DATABASES
 
 
 # Internationalization
@@ -178,46 +175,4 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-DATABASES = {
-    'default':
-        {'ENGINE': 'django.db.backends.mysql', 'NAME': u'mnwebdb', 'HOST': u'localhost', 'USER': u'mnwebuser', 'PASSWORD': u'swordfish', 'PORT': 3306}
-}
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'console_fmt': {
-            'format': '%(levelname)-7s | %(name)s | %(message)s'
-        },
-        'file_fmt': {
-            'format': '%(processName)s %(asctime)s | %(name)s | %(levelname)-7s | %(message)s'
-        }                   
-    },
-    'handlers': {
-        'console': {
-            'formatter': 'console_fmt',
-            'class': 'logging.StreamHandler'
-        },
-        'file': {
-            'formatter': 'file_fmt',
-            'class': 'logging.handlers.WatchedFileHandler',
-            'filename': '/var/log/maneki-neko-con/website.log'
-        }
-    },
-    'loggers': {
-        'socialmedia': {
-            'level': 'DEBUG',
-            'handlers': ['console','file']
-        },
-        'website': {
-            'level': 'DEBUG',
-            'handlers': ['console','file']
-        },
-# Everything else goes to the root logger.                
-        'website': {
-            'level': 'INFO',
-            'handlers': ['console','file']
-        }
-    }
-}
+LOGGING = env_settings.LOGGING
