@@ -56,3 +56,6 @@ target/
 # IDE files
 .project
 .pydevproject
+
+# Static root
+static/

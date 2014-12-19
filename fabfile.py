@@ -14,6 +14,7 @@ def deploy():
     sudo("rm -rf /var/www/maneki-neko-web")
     sudo("mv /tmp/maneki-neko-web /var/www/")
     sudo("cp ~/maneki-neko-web-settings.py /var/www/maneki-neko-web/website/env_settings.py")
+    sudo("source /home/webmaster/mnweb/bin/activate; cd /var/www/maneki-neko-web/; echo 'yes' | python manage.py collectstatic")
     sudo("chown -R www-data:www-data /var/www/maneki-neko-web")
     sudo("chmod -R g+w /var/www/maneki-neko-web")
     sudo('/etc/init.d/apache2 reload')
