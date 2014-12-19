@@ -1,9 +1,13 @@
+from django.conf.global_settings import MANAGERS
 SECRET_KEY = '&d1#ne%8(2$rcu5wn9pibbmoud8g14j@@y$fi_%))@7upw&v7('
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+
+ADMINS = ()
+
+MANAGERS = ()
 
 ALLOWED_HOSTS = []
 

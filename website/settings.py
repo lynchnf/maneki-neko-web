@@ -26,6 +26,10 @@ DEBUG = env_settings.DEBUG
 
 TEMPLATE_DEBUG = env_settings.TEMPLATE_DEBUG
 
+ADMINS = env_settings.ADMINS
+
+MANAGERS = env_settings.MANAGERS
+
 ALLOWED_HOSTS = env_settings.ALLOWED_HOSTS
 
 
