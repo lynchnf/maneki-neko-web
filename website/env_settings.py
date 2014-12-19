@@ -41,7 +41,7 @@ LOGGING = {
         'file': {
             'formatter': 'file_fmt',
             'class': 'logging.handlers.WatchedFileHandler',
-            'filename': '/var/log/maneki-neko-con/website.log'
+            'filename': 'maneki-neko-web.log'
         }
     },
     'loggers': {
