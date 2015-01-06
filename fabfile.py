@@ -11,6 +11,7 @@ def deploy():
     pack()
     put("/tmp/maneki-neko-web.tgz", "/tmp/maneki-neko-web.tgz")
     run("cd /tmp; tar xfz maneki-neko-web.tgz -m")
+    sudo("mv /var/www/maneki-neko-web/media /tmp/maneki-neko-web")
     sudo("rm -rf /var/www/maneki-neko-web")
     sudo("mv /tmp/maneki-neko-web /var/www/")
     sudo("cp ~/maneki-neko-web-settings.py /var/www/maneki-neko-web/website/env_settings.py")

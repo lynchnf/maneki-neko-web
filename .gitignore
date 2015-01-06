@@ -57,5 +57,5 @@ target/
 .project
 .pydevproject
 
-# Static root
-static/
+# Media files
+media/
