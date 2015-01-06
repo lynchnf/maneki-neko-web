@@ -128,16 +128,16 @@ INSTALLED_APPS = (
     'menus',
     'south',
     'sekizai',
-    'djangocms_style',
+#    'djangocms_style',
     'djangocms_column',
     'djangocms_file',
-    'djangocms_flash',
+#    'djangocms_flash',
     'djangocms_googlemap',
-    'djangocms_inherit',
+#    'djangocms_inherit',
     'djangocms_link',
     'djangocms_picture',
-    'djangocms_teaser',
-    'djangocms_video',
+#    'djangocms_teaser',
+#    'djangocms_video',
     'reversion',
     'website',
     'socialmedia'
@@ -172,11 +172,17 @@ CMS_TEMPLATES = (
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
     ('home.html', 'Home Page'),
+    ('newhome.html', 'New Home Page'),
     ('text.html', 'Text Page')
 )
 
 CMS_PERMISSION = True
 
-CMS_PLACEHOLDER_CONF = {}
+CMS_PLACEHOLDER_CONF = {
+    'footer': {
+        'plugins': [ 'TextPlugin' ],
+        'text_only_plugins': [ 'LinkPlugin' ]
+    }
+}
 
 LOGGING = env_settings.LOGGING
