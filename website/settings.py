@@ -148,6 +148,7 @@ INSTALLED_APPS = (
 #    'djangocms_video',
     'reversion',
     'website',
+    'navigation',
     'socialmedia'
 )
 
