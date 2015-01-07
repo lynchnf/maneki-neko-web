@@ -1,0 +1,1988 @@
+[
+{
+  "pk": 1, 
+  "model": "djangocms_text_ckeditor.text", 
+  "fields": {
+    "body": "<h1>Maneki Neko Con</h1>\n"
+  }
+},
+{
+  "pk": 4, 
+  "model": "djangocms_text_ckeditor.text", 
+  "fields": {
+    "body": "<p style=\"text-align: center;\">This is where the footer text goes.</p>\n"
+  }
+},
+{
+  "pk": 6, 
+  "model": "djangocms_text_ckeditor.text", 
+  "fields": {
+    "body": "<p>Lorem ipsum dolor sit amet, pri no labitur detracto voluptatum, nullam labitur vis ad, te qui diceret eligendi erroribus. Ex solet meliore pro, vix in laudem verterem, ne eam epicuri facilisis. Eum id quem oratio, no utinam adversarium nam. Est eu prompta denique, cum noster alterum id, pro ut tantas possit numquam.</p>\n\n<p>Mentitum sapientem philosophia sed ea. An tempor nostrud abhorreant usu, est ut quem illum iusto, vitae scriptorem id qui. Nam nusquam commune interpretaris eu, debet quaestio theophrastus ex eum. Est probo praesent eu. Iuvaret referrentur ullamcorper et nec.</p>\n"
+  }
+},
+{
+  "pk": 8, 
+  "model": "djangocms_text_ckeditor.text", 
+  "fields": {
+    "body": "<p>Lorem ipsum dolor sit amet, pri no labitur detracto voluptatum, nullam labitur vis ad, te qui diceret eligendi erroribus. Ex solet meliore pro, vix in laudem verterem, ne eam epicuri facilisis. Eum id quem oratio, no utinam adversarium nam. Est eu prompta denique, cum noster alterum id, pro ut tantas possit numquam.</p>\n\n<p>Mentitum sapientem philosophia sed ea. An tempor nostrud abhorreant usu, est ut quem illum iusto, vitae scriptorem id qui. Nam nusquam commune interpretaris eu, debet quaestio theophrastus ex eum. Est probo praesent eu. Iuvaret referrentur ullamcorper et nec.</p>\n"
+  }
+},
+{
+  "pk": 9, 
+  "model": "djangocms_text_ckeditor.text", 
+  "fields": {
+    "body": "<h1>Maneki Neko Con</h1>\n"
+  }
+},
+{
+  "pk": 12, 
+  "model": "djangocms_text_ckeditor.text", 
+  "fields": {
+    "body": "<p style=\"text-align: center;\">This is where the footer text goes.</p>\n"
+  }
+},
+{
+  "pk": 1, 
+  "model": "cms.placeholder", 
+  "fields": {
+    "slot": "clipboard", 
+    "default_width": null
+  }
+},
+{
+  "pk": 2, 
+  "model": "cms.placeholder", 
+  "fields": {
+    "slot": "content", 
+    "default_width": null
+  }
+},
+{
+  "pk": 3, 
+  "model": "cms.placeholder", 
+  "fields": {
+    "slot": "content", 
+    "default_width": null
+  }
+},
+{
+  "pk": 4, 
+  "model": "cms.placeholder", 
+  "fields": {
+    "slot": "header", 
+    "default_width": null
+  }
+},
+{
+  "pk": 5, 
+  "model": "cms.placeholder", 
+  "fields": {
+    "slot": "footer", 
+    "default_width": null
+  }
+},
+{
+  "pk": 6, 
+  "model": "cms.placeholder", 
+  "fields": {
+    "slot": "footer", 
+    "default_width": null
+  }
+},
+{
+  "pk": 7, 
+  "model": "cms.placeholder", 
+  "fields": {
+    "slot": "header", 
+    "default_width": null
+  }
+},
+{
+  "pk": 1, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:34:42Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:34:18Z", 
+    "lft": 1, 
+    "tree_id": 1, 
+    "position": 0, 
+    "placeholder": 4, 
+    "plugin_type": "TextPlugin"
+  }
+},
+{
+  "pk": 2, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:35:02Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:34:58Z", 
+    "lft": 1, 
+    "tree_id": 2, 
+    "position": 1, 
+    "placeholder": 4, 
+    "plugin_type": "MenuPlugin"
+  }
+},
+{
+  "pk": 3, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:35:15Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:35:11Z", 
+    "lft": 1, 
+    "tree_id": 3, 
+    "position": 2, 
+    "placeholder": 4, 
+    "plugin_type": "BreadcrumbPlugin"
+  }
+},
+{
+  "pk": 4, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:35:53Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:35:29Z", 
+    "lft": 1, 
+    "tree_id": 4, 
+    "position": 0, 
+    "placeholder": 5, 
+    "plugin_type": "TextPlugin"
+  }
+},
+{
+  "pk": 5, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:41:52Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:36:24Z", 
+    "lft": 1, 
+    "tree_id": 5, 
+    "position": 0, 
+    "placeholder": 2, 
+    "plugin_type": "PicturePlugin"
+  }
+},
+{
+  "pk": 6, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:42:47Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:42:37Z", 
+    "lft": 1, 
+    "tree_id": 6, 
+    "position": 1, 
+    "placeholder": 2, 
+    "plugin_type": "TextPlugin"
+  }
+},
+{
+  "pk": 7, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:42:57Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:36:24Z", 
+    "lft": 1, 
+    "tree_id": 7, 
+    "position": 0, 
+    "placeholder": 3, 
+    "plugin_type": "PicturePlugin"
+  }
+},
+{
+  "pk": 8, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:42:57Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:42:37Z", 
+    "lft": 1, 
+    "tree_id": 8, 
+    "position": 1, 
+    "placeholder": 3, 
+    "plugin_type": "TextPlugin"
+  }
+},
+{
+  "pk": 9, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:42:57Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:34:18Z", 
+    "lft": 1, 
+    "tree_id": 9, 
+    "position": 0, 
+    "placeholder": 7, 
+    "plugin_type": "TextPlugin"
+  }
+},
+{
+  "pk": 10, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:42:57Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:34:58Z", 
+    "lft": 1, 
+    "tree_id": 10, 
+    "position": 1, 
+    "placeholder": 7, 
+    "plugin_type": "MenuPlugin"
+  }
+},
+{
+  "pk": 11, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:42:57Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:35:11Z", 
+    "lft": 1, 
+    "tree_id": 11, 
+    "position": 2, 
+    "placeholder": 7, 
+    "plugin_type": "BreadcrumbPlugin"
+  }
+},
+{
+  "pk": 12, 
+  "model": "cms.cmsplugin", 
+  "fields": {
+    "rght": 2, 
+    "changed_date": "2015-01-07T20:42:57Z", 
+    "parent": null, 
+    "language": "en", 
+    "level": 0, 
+    "creation_date": "2015-01-07T20:35:29Z", 
+    "lft": 1, 
+    "tree_id": 12, 
+    "position": 0, 
+    "placeholder": 6, 
+    "plugin_type": "TextPlugin"
+  }
+},
+{
+  "pk": 1, 
+  "model": "cms.page", 
+  "fields": {
+    "rght": 2, 
+    "navigation_extenders": "", 
+    "site": 1, 
+    "application_namespace": null, 
+    "lft": 1, 
+    "in_navigation": true, 
+    "reverse_id": null, 
+    "login_required": false, 
+    "created_by": "admin", 
+    "languages": "en", 
+    "publication_end_date": null, 
+    "template": "newhome.html", 
+    "tree_id": 1, 
+    "placeholders": [
+      2, 
+      4
+    ], 
+    "changed_date": "2015-01-07T20:42:57Z", 
+    "limit_visibility_in_menu": null, 
+    "parent": null, 
+    "soft_root": false, 
+    "is_home": true, 
+    "publication_date": "2015-01-07T20:33:34Z", 
+    "creation_date": "2015-01-07T20:33:34Z", 
+    "publisher_public": 2, 
+    "level": 0, 
+    "changed_by": "admin", 
+    "application_urls": "", 
+    "publisher_is_draft": true, 
+    "xframe_options": 0, 
+    "revision_id": 0
+  }
+},
+{
+  "pk": 2, 
+  "model": "cms.page", 
+  "fields": {
+    "rght": 2, 
+    "navigation_extenders": "", 
+    "site": 1, 
+    "application_namespace": null, 
+    "lft": 1, 
+    "in_navigation": true, 
+    "reverse_id": null, 
+    "login_required": false, 
+    "created_by": "admin", 
+    "languages": "en", 
+    "publication_end_date": null, 
+    "template": "newhome.html", 
+    "tree_id": 2, 
+    "placeholders": [
+      3, 
+      7
+    ], 
+    "changed_date": "2015-01-07T20:42:57Z", 
+    "limit_visibility_in_menu": null, 
+    "parent": null, 
+    "soft_root": false, 
+    "is_home": true, 
+    "publication_date": "2015-01-07T20:33:34Z", 
+    "creation_date": "2015-01-07T20:33:35Z", 
+    "publisher_public": 1, 
+    "level": 0, 
+    "changed_by": "admin", 
+    "application_urls": "", 
+    "publisher_is_draft": false, 
+    "xframe_options": 0, 
+    "revision_id": 0
+  }
+},
+{
+  "pk": 1, 
+  "model": "cms.title", 
+  "fields": {
+    "menu_title": "", 
+    "meta_description": "", 
+    "page_title": "", 
+    "language": "en", 
+    "title": "Home", 
+    "has_url_overwrite": false, 
+    "redirect": "", 
+    "publisher_is_draft": true, 
+    "page": 1, 
+    "published": true, 
+    "path": "", 
+    "publisher_state": 0, 
+    "creation_date": "2015-01-07T20:33:34Z", 
+    "slug": "home", 
+    "publisher_public": 2
+  }
+},
+{
+  "pk": 2, 
+  "model": "cms.title", 
+  "fields": {
+    "menu_title": "", 
+    "meta_description": "", 
+    "page_title": "", 
+    "language": "en", 
+    "title": "Home", 
+    "has_url_overwrite": false, 
+    "redirect": "", 
+    "publisher_is_draft": false, 
+    "page": 2, 
+    "published": true, 
+    "path": "", 
+    "publisher_state": 1, 
+    "creation_date": "2015-01-07T20:33:34Z", 
+    "slug": "home", 
+    "publisher_public": 1
+  }
+},
+{
+  "pk": 1, 
+  "model": "cms.staticplaceholder", 
+  "fields": {
+    "code": "footer", 
+    "name": "footer", 
+    "creation_method": "template", 
+    "site": null, 
+    "draft": 5, 
+    "dirty": false, 
+    "public": 6
+  }
+},
+{
+  "pk": 5, 
+  "model": "menus.cachekey", 
+  "fields": {
+    "key": "menu_cache_menu_nodes_en_1_1_user", 
+    "site": 1, 
+    "language": "en"
+  }
+},
+{
+  "pk": 5, 
+  "model": "djangocms_picture.picture", 
+  "fields": {
+    "url": "http://en.wikipedia.org/wiki/Maneki-neko", 
+    "image": "cms_page_media/1/koban-maneki.jpg", 
+    "float": null, 
+    "page_link": null, 
+    "alt": "Japanese \"good luck\" cat", 
+    "longdesc": "The maneki-neko is a common Japanese figurine (lucky charm, talisman) which is often believed to bring good luck to the owner. In modern times, they are usually made of ceramic or plastic."
+  }
+},
+{
+  "pk": 7, 
+  "model": "djangocms_picture.picture", 
+  "fields": {
+    "url": "http://en.wikipedia.org/wiki/Maneki-neko", 
+    "image": "cms_page_media/1/koban-maneki.jpg", 
+    "float": null, 
+    "page_link": null, 
+    "alt": "Japanese \"good luck\" cat", 
+    "longdesc": "The maneki-neko is a common Japanese figurine (lucky charm, talisman) which is often believed to bring good luck to the owner. In modern times, they are usually made of ceramic or plastic."
+  }
+},
+{
+  "pk": 1, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": null, \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"INHERIT\", \"tree_id\": 1, \"placeholders\": [2], \"changed_date\": \"2015-01-07T20:33:35.296Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34.993Z\", \"creation_date\": \"2015-01-07T20:33:34.829Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": null, \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 1
+  }
+},
+{
+  "pk": 2, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 1
+  }
+},
+{
+  "pk": 3, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": null, \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 0, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": null}}]", 
+    "revision": 1
+  }
+},
+{
+  "pk": 4, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:33:52.271Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 2
+  }
+},
+{
+  "pk": 5, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 2
+  }
+},
+{
+  "pk": 6, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 2
+  }
+},
+{
+  "pk": 7, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": null}}]", 
+    "revision": 2
+  }
+},
+{
+  "pk": 8, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:33:52Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 3
+  }
+},
+{
+  "pk": 9, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 3
+  }
+},
+{
+  "pk": 10, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 3
+  }
+},
+{
+  "pk": 11, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 3
+  }
+},
+{
+  "pk": 12, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:18Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 3
+  }
+},
+{
+  "pk": 13, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:34:18Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 4
+  }
+},
+{
+  "pk": 14, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 4
+  }
+},
+{
+  "pk": 15, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 4
+  }
+},
+{
+  "pk": 16, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 4
+  }
+},
+{
+  "pk": 17, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 4
+  }
+},
+{
+  "pk": 18, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 4
+  }
+},
+{
+  "pk": 19, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:34:42Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 5
+  }
+},
+{
+  "pk": 20, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 5
+  }
+},
+{
+  "pk": 21, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 5
+  }
+},
+{
+  "pk": 22, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 5
+  }
+},
+{
+  "pk": 23, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 5
+  }
+},
+{
+  "pk": 24, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "2", 
+    "object_id": "2", 
+    "content_type": 11, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:58Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:58Z\", \"lft\": 1, \"tree_id\": 2, \"position\": 1, \"placeholder\": 4, \"plugin_type\": \"MenuPlugin\"}}]", 
+    "revision": 5
+  }
+},
+{
+  "pk": 25, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 5
+  }
+},
+{
+  "pk": 26, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:34:58Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 6
+  }
+},
+{
+  "pk": 27, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 6
+  }
+},
+{
+  "pk": 28, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 6
+  }
+},
+{
+  "pk": 29, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 6
+  }
+},
+{
+  "pk": 30, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 6
+  }
+},
+{
+  "pk": 31, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "2", 
+    "object_id": "2", 
+    "content_type": 11, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:02Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:58Z\", \"lft\": 1, \"tree_id\": 2, \"position\": 1, \"placeholder\": 4, \"plugin_type\": \"MenuPlugin\"}}]", 
+    "revision": 6
+  }
+},
+{
+  "pk": 32, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 6
+  }
+},
+{
+  "pk": 33, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:35:03Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 7
+  }
+},
+{
+  "pk": 34, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 7
+  }
+},
+{
+  "pk": 35, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "3", 
+    "object_id": "3", 
+    "content_type": 11, 
+    "object_id_int": 3, 
+    "serialized_data": "[{\"pk\": 3, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:11Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:35:11Z\", \"lft\": 1, \"tree_id\": 3, \"position\": 2, \"placeholder\": 4, \"plugin_type\": \"BreadcrumbPlugin\"}}]", 
+    "revision": 7
+  }
+},
+{
+  "pk": 36, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 7
+  }
+},
+{
+  "pk": 37, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 7
+  }
+},
+{
+  "pk": 38, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 7
+  }
+},
+{
+  "pk": 39, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "2", 
+    "object_id": "2", 
+    "content_type": 11, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:02Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:58Z\", \"lft\": 1, \"tree_id\": 2, \"position\": 1, \"placeholder\": 4, \"plugin_type\": \"MenuPlugin\"}}]", 
+    "revision": 7
+  }
+},
+{
+  "pk": 40, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 7
+  }
+},
+{
+  "pk": 41, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:35:11Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 8
+  }
+},
+{
+  "pk": 42, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 8
+  }
+},
+{
+  "pk": 43, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "3", 
+    "object_id": "3", 
+    "content_type": 11, 
+    "object_id_int": 3, 
+    "serialized_data": "[{\"pk\": 3, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:15Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:35:11Z\", \"lft\": 1, \"tree_id\": 3, \"position\": 2, \"placeholder\": 4, \"plugin_type\": \"BreadcrumbPlugin\"}}]", 
+    "revision": 8
+  }
+},
+{
+  "pk": 44, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 8
+  }
+},
+{
+  "pk": 45, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 8
+  }
+},
+{
+  "pk": 46, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 8
+  }
+},
+{
+  "pk": 47, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "2", 
+    "object_id": "2", 
+    "content_type": 11, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:02Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:58Z\", \"lft\": 1, \"tree_id\": 2, \"position\": 1, \"placeholder\": 4, \"plugin_type\": \"MenuPlugin\"}}]", 
+    "revision": 8
+  }
+},
+{
+  "pk": 48, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 8
+  }
+},
+{
+  "pk": 49, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:35:15Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 9
+  }
+},
+{
+  "pk": 50, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 9
+  }
+},
+{
+  "pk": 51, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "3", 
+    "object_id": "3", 
+    "content_type": 11, 
+    "object_id_int": 3, 
+    "serialized_data": "[{\"pk\": 3, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:15Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:35:11Z\", \"lft\": 1, \"tree_id\": 3, \"position\": 2, \"placeholder\": 4, \"plugin_type\": \"BreadcrumbPlugin\"}}]", 
+    "revision": 9
+  }
+},
+{
+  "pk": 52, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 9
+  }
+},
+{
+  "pk": 53, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "5", 
+    "object_id": "5", 
+    "content_type": 11, 
+    "object_id_int": 5, 
+    "serialized_data": "[{\"pk\": 5, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:36:24Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:36:24Z\", \"lft\": 1, \"tree_id\": 5, \"position\": 0, \"placeholder\": 2, \"plugin_type\": \"PicturePlugin\"}}]", 
+    "revision": 9
+  }
+},
+{
+  "pk": 54, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 9
+  }
+},
+{
+  "pk": 55, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 9
+  }
+},
+{
+  "pk": 56, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "2", 
+    "object_id": "2", 
+    "content_type": 11, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:02Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:58Z\", \"lft\": 1, \"tree_id\": 2, \"position\": 1, \"placeholder\": 4, \"plugin_type\": \"MenuPlugin\"}}]", 
+    "revision": 9
+  }
+},
+{
+  "pk": 57, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 9
+  }
+},
+{
+  "pk": 58, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:36:24Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 59, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 60, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "3", 
+    "object_id": "3", 
+    "content_type": 11, 
+    "object_id_int": 3, 
+    "serialized_data": "[{\"pk\": 3, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:15Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:35:11Z\", \"lft\": 1, \"tree_id\": 3, \"position\": 2, \"placeholder\": 4, \"plugin_type\": \"BreadcrumbPlugin\"}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 61, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 62, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Japanese \"good luck\" cat", 
+    "object_id": "5", 
+    "content_type": 28, 
+    "object_id_int": 5, 
+    "serialized_data": "[{\"pk\": 5, \"model\": \"djangocms_picture.picture\", \"fields\": {\"url\": \"http://en.wikipedia.org/wiki/Maneki-neko\", \"image\": \"cms_page_media/1/koban-maneki.jpg\", \"float\": null, \"page_link\": null, \"alt\": \"Japanese \\\"good luck\\\" cat\", \"longdesc\": \"The maneki-neko is a common Japanese figurine (lucky charm, talisman) which is often believed to bring good luck to the owner. In modern times, they are usually made of ceramic or plastic.\"}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 63, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 64, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 65, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "2", 
+    "object_id": "2", 
+    "content_type": 11, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:02Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:58Z\", \"lft\": 1, \"tree_id\": 2, \"position\": 1, \"placeholder\": 4, \"plugin_type\": \"MenuPlugin\"}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 66, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 67, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "5", 
+    "object_id": "5", 
+    "content_type": 11, 
+    "object_id_int": 5, 
+    "serialized_data": "[{\"pk\": 5, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:41:52Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:36:24Z\", \"lft\": 1, \"tree_id\": 5, \"position\": 0, \"placeholder\": 2, \"plugin_type\": \"PicturePlugin\"}}]", 
+    "revision": 10
+  }
+},
+{
+  "pk": 68, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:41:53Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 69, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 70, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "3", 
+    "object_id": "3", 
+    "content_type": 11, 
+    "object_id_int": 3, 
+    "serialized_data": "[{\"pk\": 3, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:15Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:35:11Z\", \"lft\": 1, \"tree_id\": 3, \"position\": 2, \"placeholder\": 4, \"plugin_type\": \"BreadcrumbPlugin\"}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 71, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 72, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Japanese \"good luck\" cat", 
+    "object_id": "5", 
+    "content_type": 28, 
+    "object_id_int": 5, 
+    "serialized_data": "[{\"pk\": 5, \"model\": \"djangocms_picture.picture\", \"fields\": {\"url\": \"http://en.wikipedia.org/wiki/Maneki-neko\", \"image\": \"cms_page_media/1/koban-maneki.jpg\", \"float\": null, \"page_link\": null, \"alt\": \"Japanese \\\"good luck\\\" cat\", \"longdesc\": \"The maneki-neko is a common Japanese figurine (lucky charm, talisman) which is often believed to bring good luck to the owner. In modern times, they are usually made of ceramic or plastic.\"}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 73, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "6", 
+    "object_id": "6", 
+    "content_type": 11, 
+    "object_id_int": 6, 
+    "serialized_data": "[{\"pk\": 6, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:42:37Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:42:37Z\", \"lft\": 1, \"tree_id\": 6, \"position\": 1, \"placeholder\": 2, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 74, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 75, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 76, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "2", 
+    "object_id": "2", 
+    "content_type": 11, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:02Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:58Z\", \"lft\": 1, \"tree_id\": 2, \"position\": 1, \"placeholder\": 4, \"plugin_type\": \"MenuPlugin\"}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 77, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 78, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "5", 
+    "object_id": "5", 
+    "content_type": 11, 
+    "object_id_int": 5, 
+    "serialized_data": "[{\"pk\": 5, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:41:52Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:36:24Z\", \"lft\": 1, \"tree_id\": 5, \"position\": 0, \"placeholder\": 2, \"plugin_type\": \"PicturePlugin\"}}]", 
+    "revision": 11
+  }
+},
+{
+  "pk": 79, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:42:37Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 80, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 81, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "3", 
+    "object_id": "3", 
+    "content_type": 11, 
+    "object_id_int": 3, 
+    "serialized_data": "[{\"pk\": 3, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:15Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:35:11Z\", \"lft\": 1, \"tree_id\": 3, \"position\": 2, \"placeholder\": 4, \"plugin_type\": \"BreadcrumbPlugin\"}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 82, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 83, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Japanese \"good luck\" cat", 
+    "object_id": "5", 
+    "content_type": 28, 
+    "object_id_int": 5, 
+    "serialized_data": "[{\"pk\": 5, \"model\": \"djangocms_picture.picture\", \"fields\": {\"url\": \"http://en.wikipedia.org/wiki/Maneki-neko\", \"image\": \"cms_page_media/1/koban-maneki.jpg\", \"float\": null, \"page_link\": null, \"alt\": \"Japanese \\\"good luck\\\" cat\", \"longdesc\": \"The maneki-neko is a common Japanese figurine (lucky charm, talisman) which is often believed to bring good luck to the owner. In modern times, they are usually made of ceramic or plastic.\"}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 84, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Lorem ipsum dolor...", 
+    "object_id": "6", 
+    "content_type": 1, 
+    "object_id_int": 6, 
+    "serialized_data": "[{\"pk\": 6, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<p>Lorem ipsum dolor sit amet, pri no labitur detracto voluptatum, nullam labitur vis ad, te qui diceret eligendi erroribus. Ex solet meliore pro, vix in laudem verterem, ne eam epicuri facilisis. Eum id quem oratio, no utinam adversarium nam. Est eu prompta denique, cum noster alterum id, pro ut tantas possit numquam.</p>\\n\\n<p>Mentitum sapientem philosophia sed ea. An tempor nostrud abhorreant usu, est ut quem illum iusto, vitae scriptorem id qui. Nam nusquam commune interpretaris eu, debet quaestio theophrastus ex eum. Est probo praesent eu. Iuvaret referrentur ullamcorper et nec.</p>\\n\"}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 85, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 86, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 1, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 87, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "2", 
+    "object_id": "2", 
+    "content_type": 11, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:02Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:58Z\", \"lft\": 1, \"tree_id\": 2, \"position\": 1, \"placeholder\": 4, \"plugin_type\": \"MenuPlugin\"}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 88, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 89, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "6", 
+    "object_id": "6", 
+    "content_type": 11, 
+    "object_id_int": 6, 
+    "serialized_data": "[{\"pk\": 6, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:42:47Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:42:37Z\", \"lft\": 1, \"tree_id\": 6, \"position\": 1, \"placeholder\": 2, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 90, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "5", 
+    "object_id": "5", 
+    "content_type": 11, 
+    "object_id_int": 5, 
+    "serialized_data": "[{\"pk\": 5, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:41:52Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:36:24Z\", \"lft\": 1, \"tree_id\": 5, \"position\": 0, \"placeholder\": 2, \"plugin_type\": \"PicturePlugin\"}}]", 
+    "revision": 12
+  }
+},
+{
+  "pk": 91, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "content_type": 12, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.page\", \"fields\": {\"rght\": 2, \"navigation_extenders\": \"\", \"site\": 1, \"application_namespace\": null, \"lft\": 1, \"in_navigation\": true, \"reverse_id\": null, \"login_required\": false, \"created_by\": \"admin\", \"languages\": \"en\", \"publication_end_date\": null, \"template\": \"newhome.html\", \"tree_id\": 1, \"placeholders\": [2, 4], \"changed_date\": \"2015-01-07T20:42:57.464Z\", \"limit_visibility_in_menu\": null, \"parent\": null, \"soft_root\": false, \"is_home\": true, \"publication_date\": \"2015-01-07T20:33:34Z\", \"creation_date\": \"2015-01-07T20:33:34Z\", \"level\": 0, \"changed_by\": \"admin\", \"application_urls\": \"\", \"xframe_options\": 0, \"revision_id\": 0}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 92, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "content", 
+    "object_id": "2", 
+    "content_type": 10, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"content\", \"default_width\": null}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 93, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "3", 
+    "object_id": "3", 
+    "content_type": 11, 
+    "object_id_int": 3, 
+    "serialized_data": "[{\"pk\": 3, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:15Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:35:11Z\", \"lft\": 1, \"tree_id\": 3, \"position\": 2, \"placeholder\": 4, \"plugin_type\": \"BreadcrumbPlugin\"}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 94, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "header", 
+    "object_id": "4", 
+    "content_type": 10, 
+    "object_id_int": 4, 
+    "serialized_data": "[{\"pk\": 4, \"model\": \"cms.placeholder\", \"fields\": {\"slot\": \"header\", \"default_width\": null}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 95, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Japanese \"good luck\" cat", 
+    "object_id": "5", 
+    "content_type": 28, 
+    "object_id_int": 5, 
+    "serialized_data": "[{\"pk\": 5, \"model\": \"djangocms_picture.picture\", \"fields\": {\"url\": \"http://en.wikipedia.org/wiki/Maneki-neko\", \"image\": \"cms_page_media/1/koban-maneki.jpg\", \"float\": null, \"page_link\": null, \"alt\": \"Japanese \\\"good luck\\\" cat\", \"longdesc\": \"The maneki-neko is a common Japanese figurine (lucky charm, talisman) which is often believed to bring good luck to the owner. In modern times, they are usually made of ceramic or plastic.\"}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 96, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Lorem ipsum dolor...", 
+    "object_id": "6", 
+    "content_type": 1, 
+    "object_id_int": 6, 
+    "serialized_data": "[{\"pk\": 6, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<p>Lorem ipsum dolor sit amet, pri no labitur detracto voluptatum, nullam labitur vis ad, te qui diceret eligendi erroribus. Ex solet meliore pro, vix in laudem verterem, ne eam epicuri facilisis. Eum id quem oratio, no utinam adversarium nam. Est eu prompta denique, cum noster alterum id, pro ut tantas possit numquam.</p>\\n\\n<p>Mentitum sapientem philosophia sed ea. An tempor nostrud abhorreant usu, est ut quem illum iusto, vitae scriptorem id qui. Nam nusquam commune interpretaris eu, debet quaestio theophrastus ex eum. Est probo praesent eu. Iuvaret referrentur ullamcorper et nec.</p>\\n\"}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 97, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "1", 
+    "object_id": "1", 
+    "content_type": 11, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:34:42Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:18Z\", \"lft\": 1, \"tree_id\": 1, \"position\": 0, \"placeholder\": 4, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 98, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Home (home, en)", 
+    "object_id": "1", 
+    "content_type": 17, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"cms.title\", \"fields\": {\"menu_title\": \"\", \"meta_description\": \"\", \"page_title\": \"\", \"language\": \"en\", \"title\": \"Home\", \"has_url_overwrite\": false, \"redirect\": \"\", \"publisher_is_draft\": true, \"page\": 1, \"published\": true, \"path\": \"\", \"publisher_state\": 0, \"creation_date\": \"2015-01-07T20:33:34Z\", \"slug\": \"home\", \"publisher_public\": 2}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 99, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "2", 
+    "object_id": "2", 
+    "content_type": 11, 
+    "object_id_int": 2, 
+    "serialized_data": "[{\"pk\": 2, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:35:02Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:34:58Z\", \"lft\": 1, \"tree_id\": 2, \"position\": 1, \"placeholder\": 4, \"plugin_type\": \"MenuPlugin\"}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 100, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "Maneki Neko Con", 
+    "object_id": "1", 
+    "content_type": 1, 
+    "object_id_int": 1, 
+    "serialized_data": "[{\"pk\": 1, \"model\": \"djangocms_text_ckeditor.text\", \"fields\": {\"body\": \"<h1>Maneki Neko Con</h1>\\n\"}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 101, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "6", 
+    "object_id": "6", 
+    "content_type": 11, 
+    "object_id_int": 6, 
+    "serialized_data": "[{\"pk\": 6, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:42:47Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:42:37Z\", \"lft\": 1, \"tree_id\": 6, \"position\": 1, \"placeholder\": 2, \"plugin_type\": \"TextPlugin\"}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 102, 
+  "model": "reversion.version", 
+  "fields": {
+    "format": "json", 
+    "object_repr": "5", 
+    "object_id": "5", 
+    "content_type": 11, 
+    "object_id_int": 5, 
+    "serialized_data": "[{\"pk\": 5, \"model\": \"cms.cmsplugin\", \"fields\": {\"rght\": 2, \"changed_date\": \"2015-01-07T20:41:52Z\", \"parent\": null, \"language\": \"en\", \"level\": 0, \"creation_date\": \"2015-01-07T20:36:24Z\", \"lft\": 1, \"tree_id\": 5, \"position\": 0, \"placeholder\": 2, \"plugin_type\": \"PicturePlugin\"}}]", 
+    "revision": 13
+  }
+},
+{
+  "pk": 1, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "admin", 
+    "first_name": "", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": true, 
+    "is_staff": true, 
+    "last_login": "2015-01-07T20:33:30Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$12000$LbiGiBs4c2JM$REBu0QIqTPJJxkhky2y887IgpRihVl8W+LdjOzzh55s=", 
+    "email": "admin@example.com", 
+    "date_joined": "2015-01-07T20:32:29Z"
+  }
+},
+{
+  "pk": 1, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2015-01-07T20:33:35Z", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 12
+  }
+},
+{
+  "pk": 2, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2015-01-07T20:33:52Z", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "change_message": "Changed template and xframe_options.", 
+    "user": 1, 
+    "content_type": 12
+  }
+},
+{
+  "pk": 3, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 2, 
+    "action_time": "2015-01-07T20:42:57Z", 
+    "object_repr": "Home", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 12
+  }
+},
+{
+  "pk": 1, 
+  "model": "cms.usersettings", 
+  "fields": {
+    "clipboard": 1, 
+    "user": 1, 
+    "language": "en"
+  }
+},
+{
+  "pk": 1, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Initial version.", 
+    "date_created": "2015-01-07T20:33:35Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 2, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Changed template and xframe_options.", 
+    "date_created": "2015-01-07T20:33:52Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 3, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Text plugin added to header", 
+    "date_created": "2015-01-07T20:34:18Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 4, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Text plugin edited at position 0 in header", 
+    "date_created": "2015-01-07T20:34:42Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 5, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Menu plugin added to header", 
+    "date_created": "2015-01-07T20:34:58Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 6, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Menu plugin edited at position 1 in header", 
+    "date_created": "2015-01-07T20:35:03Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 7, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Breadcrumb plugin added to header", 
+    "date_created": "2015-01-07T20:35:11Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 8, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Breadcrumb plugin edited at position 2 in header", 
+    "date_created": "2015-01-07T20:35:15Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 9, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Picture plugin added to content", 
+    "date_created": "2015-01-07T20:36:24Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 10, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Picture plugin edited at position 0 in content", 
+    "date_created": "2015-01-07T20:41:53Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 11, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Text plugin added to content", 
+    "date_created": "2015-01-07T20:42:37Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 12, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Text plugin edited at position 1 in content", 
+    "date_created": "2015-01-07T20:42:47Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+},
+{
+  "pk": 13, 
+  "model": "reversion.revision", 
+  "fields": {
+    "comment": "Publish", 
+    "date_created": "2015-01-07T20:42:57Z", 
+    "manager_slug": "default", 
+    "user": 1
+  }
+}
+]
