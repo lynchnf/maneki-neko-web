@@ -28,7 +28,7 @@ class SocialLinkPlugin(CMSPluginBase):
         for choice in ICON_CHOICES:
             if choice[0] == instance.icon:
                 title = choice[1]
-        paren_pos = title.find("(")
+        paren_pos = title.find(" (")
         if paren_pos > 0:
             title = title[:paren_pos]
         title.strip()

@@ -30,5 +30,8 @@ class SocialLink(CMSPlugin):
     size = models.IntegerField("Icon Size", default=0)
     url = models.URLField("URL")
     
-    def __unicode__(self):
+    def x__unicode__x(self):
         return self.url
+    
+    def __unicode__(self):
+        return "icon is %s, size is %s, url is %s" % (self.icon, self.size, self.url)
