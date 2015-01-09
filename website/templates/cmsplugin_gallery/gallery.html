@@ -22,7 +22,7 @@
 	{% for image in images %}
 		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 		    <a href="#" class="thumbnail" data-toggle="modal" data-target="#gallery-image-{{ image.id }}">
-			    <img src="{% thumbnail image.src 175x175 crop %}" alt="{{ image.alt }}" title="{{ image.title }}">
+			    <img src="{% thumbnail image.src 175x175 crop subject_location=image.src.subject_location %}" alt="{{ image.alt }}" title="{{ image.title }}">
 			</a>
 		</div>
 	{% endfor %}
