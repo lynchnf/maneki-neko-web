@@ -1,18 +1,25 @@
 {% load thumbnail sekizai_tags %}
 {% for image in images %}
-    <div class="modal fade" id="gallery-image-{{ image.id }}" tabindex="-1" role="dialog" aria-labelledby="gallery-image-label-{{ image.id }}" aria-hidden="true">
+    <div class="modal fade"
+         id="gallery-image-{{ gallery.pk }}-{{ forloop.counter0 }}"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="gallery-image-label-{{ gallery.pk }}-{{ forloop.counter0 }}" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="gallery-image-label-{{ image.id }}">{{ image.title }}</h4>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#gallery-image-{{ gallery.pk }}-{% if forloop.last %}0{% else %}{{ forloop.counter }}{% endif %}">Next &gt;</button>
                 </div>
                 <div class="modal-body">
                     <img src="{{ image.src.url }}" alt="{{ image.alt }}" class="center-block img-responsive">
                 </div>
+                {% if image.title %}
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <h4 class="modal-title text-center" id="gallery-image-label-{{ gallery.pk }}-{{ forloop.counter0 }}">{{ image.title }}</h4>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -21,7 +28,10 @@
 <div class="row gallery" id="gallery-{{ gallery.pk }}">
 	{% for image in images %}
 		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-		    <a href="#" class="thumbnail" data-toggle="modal" data-target="#gallery-image-{{ image.id }}">
+		    <a href="#"
+		       class="thumbnail"
+		       data-toggle="modal"
+		       data-target="#gallery-image-{{ gallery.pk }}-{{ forloop.counter0 }}">
 			    <img src="{% thumbnail image.src 175x175 crop subject_location=image.src.subject_location %}" alt="{{ image.alt }}" title="{{ image.title }}">
 			</a>
 		</div>
