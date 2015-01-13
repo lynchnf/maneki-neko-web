@@ -152,7 +152,8 @@ INSTALLED_APPS = (
     'reversion',
     'website',
     'navigation',
-    'socialmedia'
+    'socialmedia',
+    'analytics'
 )
 
 LANGUAGES = (
