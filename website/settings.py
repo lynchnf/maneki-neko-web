@@ -191,9 +191,13 @@ CMS_TEMPLATES = (
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {
+    'header': {
+        'plugins': ['TextPlugin', 'LinkPlugin', 'PicturePlugin', 'MenuPlugin', 'BreadcrumbPlugin', 'SocialLinkPlugin'],
+        'text_only_plugins': ['LinkPlugin', 'PicturePlugin']
+    },
     'footer': {
-        'plugins': [ 'TextPlugin' ],
-        'text_only_plugins': [ 'LinkPlugin' ]
+        'plugins': ['TextPlugin'],
+        'text_only_plugins': ['LinkPlugin']
     }
 }
 
