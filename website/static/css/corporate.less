@@ -1,0 +1,44 @@
+@default-background-color: #ffffff;
+
+@header-background-color: #006338;
+@header-text-color: difference(#ffffff, @header-background-color);
+@header-background-accent-color: #70126b;
+@header-text-accent-color: difference(#ffffff, @header-background-accent-color);
+@header-background-muted-color: transparent;
+@header-text-muted-color: darken(@header-text-color, 40%);
+
+@content-background-color: #ffffff;
+@content-text-color: #333333;
+@content-background-accent-color: #b085b3;
+@content-text-accent-color: difference(#ffffff, @content-background-accent-color);
+@content-background-muted-color: transparent;
+@content-text-muted-color: lighten(@content-text-color, 40%);
+
+@default-font: 'Times New Roman', Times, serif;
+@accent-font: Georgia, Utopia, Charter, serif;
+
+/* General Styles */
+body {
+    background-color: @default-background-color;
+    font-family: @default-font;
+}
+
+/* Header */
+.header {
+    background-color: @header-background-color;
+    color: @header-text-color;
+    font-family: @accent-font;
+}
+
+/* Footer */
+.footer {
+    background-color: @header-background-color;
+    color: @header-text-color;
+    font-family: default-font;
+}    
+
+/* Content */
+.content .container {
+    background-color: @content-background-color;
+    color: @content-text-color;
+}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags %}
+
+{% block title %}Lucky Cat Educational Enterprises, LLC{% endblock title %}
+
+{% block base-header %}
+    {% addtoblock "css" %}
+        <link rel="stylesheet/less" href="{% static 'css/corporate.less' %}" />
+    {% endaddtoblock %}
+    {% addtoblock "js" %}
+        <script src="{% static 'js/less.js' %}"></script>
+    {% endaddtoblock %}
+    <h1>Lucky Cat Educational Enterprises, LLC</h1>
+{% endblock base-header %}
+
+{% block base-content %}
+    {% placeholder "content" %}
+{% endblock base-content %}
+
+{% block base-footer %}
+    {% static_placeholder "corporation-footer" %}
+{% endblock base-footer %}

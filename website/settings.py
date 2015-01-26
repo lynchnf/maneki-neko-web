@@ -179,13 +179,8 @@ CMS_LANGUAGES = {
 }
 
 CMS_TEMPLATES = (
-    ## Customize this
-    ('fullwidth.html', 'Fullwidth'),
-    ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right'),
-    ('home.html', 'Home Page'),
-    ('newhome.html', 'New Home Page'),
-    ('text.html', 'Text Page')
+    ('con-home.html', 'Convention home page'),
+    ('corp.html', 'Sponsoring corporation page')
 )
 
 CMS_PERMISSION = True
@@ -195,10 +190,17 @@ CMS_PLACEHOLDER_CONF = {
         'plugins': ['TextPlugin', 'LinkPlugin', 'PicturePlugin', 'MenuPlugin', 'BreadcrumbPlugin', 'SocialLinkPlugin'],
         'text_only_plugins': ['LinkPlugin', 'PicturePlugin']
     },
-    'footer': {
+    'footer-text': {
         'plugins': ['TextPlugin'],
         'text_only_plugins': ['LinkPlugin']
-    }
+    },
+    'footer-links': {
+        'plugins': ['LinkPlugin']
+    },                        
+    'corporation-footer': {
+        'plugins': ['TextPlugin'],
+        'text_only_plugins': ['LinkPlugin']
+    }                        
 }
 
 THUMBNAIL_PROCESSORS = (
