@@ -22,13 +22,25 @@
             <div class="con-dates">Oct. 9<sup>th</sup> - 11<sup>th</sup>, 2015, Matteson, IL</div>
         </div>
     </div>
-            
-    
-    
 {% endblock base-header %}
 
 {% block base-content %}
-    {% placeholder "content" %}
+    <div class="row">
+        <div class="col-md-12">
+            {% placeholder "images" %}
+        </div>
+        <div class="col-md-3">
+            <div class="social">
+                {% placeholder "social-links" %}
+            </div>
+            <div>
+                {% placeholder "news" %}
+            </div>
+        </div>
+        <div class="col-md-9">
+            {% placeholder "content" %}
+        </div>
+    </div>
 {% endblock base-content %}
 
 {% block base-footer %}
