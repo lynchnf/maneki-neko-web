@@ -121,12 +121,12 @@ You will need a domain registrar (I used GoDaddy) and a hosting provider (I used
   - `cd /etc/logrotate.d`
   - `sudo nano maneki-neko-web`
   - Enter the following:
-
+```
     /var/log/maneki-neko-web/*.log {
         daily
         rotate 30
     }
-
+```
   - Save and exit.
 
 cd /etc/apache2/sites-available/
