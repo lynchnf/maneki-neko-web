@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags %}
+
+{% block title %}Maneki Neko Con - {% page_attribute 'title' %}{% endblock title %}
+
+{% block base-header %}
+    {% addtoblock "css" %}
+        <link rel="stylesheet/less" href="{% static 'css/convention.less' %}" />
+    {% endaddtoblock %}
+    {% addtoblock "js" %}
+        <script src="{% static 'js/less.js' %}"></script>
+    {% endaddtoblock %}
+    
+    <div class="row">
+        <div class="col-md-3">
+            <div class="con-name">Maneki Neko Con</div>
+        </div>
+        <div class="col-md-6">
+            <img class="img-responsive" src="{% static 'img/banner-art.png' %}" alt="Maneki Neko Con logo" />
+        </div>
+        <div class="col-md-3">
+            <div class="con-dates">Oct. 9<sup>th</sup> - 11<sup>th</sup>, 2015, Matteson, IL</div>
+        </div>
+    </div>
+{% endblock base-header %}
+
+{% block base-content %}
+    {% block con-content %}{% endblock con-content %}
+{% endblock base-content %}
+
+{% block base-footer %}
+    <div class="row">
+        <div class="col-md-6">
+            {% static_placeholder "footer-text" %}
+        </div>
+        <div class="col-md-6">
+            <div class="pull-right">
+                {% static_placeholder "footer-links" %}
+            </div>
+        </div>
+    </div>
+{% endblock base-footer %}

@@ -1,1 +1,7 @@
-<a href="{{ instance.url }}" title="{{ title }}" target="_blank"><i class="{{ styleClass }}"></i></a>
+{% load cms_tags staticfiles sekizai_tags %}
+
+{% addtoblock "css" %}
+    <link rel="stylesheet/less" href="{% static 'css/socialmedia.less' %}" />
+{% endaddtoblock %}
+
+<a class="{{ styleClass }}" href="{{ instance.url }}" title="{{ title }}" target="_blank"></a>
