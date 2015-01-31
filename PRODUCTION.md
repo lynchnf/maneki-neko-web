@@ -120,14 +120,13 @@ You will need a domain registrar (I used GoDaddy) and a hosting provider (I used
   - `sudo chmod 666 website.log`
   - `cd /etc/logrotate.d`
   - `sudo nano maneki-neko-web`
-  - Enter the following:
+  - Enter the following, then save and exit:
 ```
     /var/log/maneki-neko-web/*.log {
         daily
         rotate 30
     }
 ```
-  - Save and exit.
 
 cd /etc/apache2/sites-available/
 sudo cp 000-default.conf maneki-neko-web.conf
