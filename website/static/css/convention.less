@@ -1,0 +1,93 @@
+@default-background-color: #ffffff;
+
+@header-background-color: #ffffff;
+@header-text-color: #333333;
+@header-background-accent-color: #333333;
+@header-text-accent-color: #cccccc;
+@header-background-muted-color: transparent;
+@header-text-muted-color: #666666;
+
+@footer-background-color: #cccccc;
+@footer-text-color: difference(#ffffff, @footer-background-color);
+@footer-background-accent-color: transparent;
+@footer-text-accent-color: darken(@footer-text-color, 20%);
+@footer-background-muted-color: transparent;
+@footer-text-muted-color: lighten(@footer-text-color, 20%);
+
+@content-background-color: #ffffff;
+@content-text-color: #333333;
+@content-background-accent-color: @content-text-color;
+@content-text-accent-color: @content-background-color;
+@content-background-muted-color: transparent;
+@content-text-muted-color: lighten(@content-text-color, 40%);
+
+@default-font: Verdana, Geneva, sans-serif;
+@accent-font: Pristina, 'Brush Script MT', 'Brush Script', 'Apple Chancery','URW Chancery L', cursive;
+
+/* General Styles */
+body {
+    background-color: @default-background-color;
+    font-family: @default-font;
+}
+
+/* Header */
+.header {
+    background-color: @header-background-color;
+    color: @header-text-color;
+    
+    .con-name {
+        font-family: @accent-font;
+        font-size: 68px;
+        font-weight: bold;
+        line-height: 1;
+        margin-top: 25px;
+    }
+
+    .con-dates {
+        font-family: @accent-font;
+        font-size: 50px;
+        line-height: 1;
+        margin-top: 15px;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: @footer-background-color;
+    color: @footer-text-color;
+
+    a {
+        background-color: @footer-background-muted-color;
+        color: @footer-text-muted-color;
+        text-decoration: underline;
+    }
+    
+    a:hover {
+        background-color: @footer-background-accent-color;
+        color: @footer-text-accent-color;
+    }
+    
+    .footer-text {}
+    
+    .footer-links {
+        a {
+            margin-left: 1em;
+            text-transform: uppercase;
+        }
+    }
+}    
+
+/* Content */
+.content .container {
+    background-color: @content-background-color;
+    color: @content-text-color;
+    
+    .home-carousel {}
+    
+    .social-links {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .news {}
+}
