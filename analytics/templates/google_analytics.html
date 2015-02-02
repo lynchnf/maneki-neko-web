@@ -1,5 +1,6 @@
 {% load cms_tags sekizai_tags %}
 
+{% if instance.tracking_id %}
 <!-- Google Analytics -->
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -9,6 +10,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', '{{ instance.tracking_id }}', 'auto');
 ga('send', 'pageview');
-
 </script>
 <!-- End Google Analytics -->
+{% endif %}

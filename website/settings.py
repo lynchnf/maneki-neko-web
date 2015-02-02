@@ -188,6 +188,9 @@ CMS_TEMPLATES = (
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {
+    'analytics': {
+        'plugins': ['GoogleAnalyticsPlugin']
+    },
     'images': {
         'plugins': ['PicturePlugin', 'CMSGalleryPlugin']
     },
