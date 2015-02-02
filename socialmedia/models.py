@@ -21,10 +21,12 @@ ICON_CHOICES = (
         ("fa-twitter", _("Twitter")),
         ("fa-youtube-play", _("YouTube")))
 
+SIZE_CHOICES = [(i,i) for i in range(6)]
+
 class SocialLink(CMSPlugin):
     icon = models.CharField("Social Network Icon", max_length=20, choices=ICON_CHOICES)
-    size = models.IntegerField("Icon Size", default=0)
+    size = models.IntegerField("Icon Size", default=0, choices=SIZE_CHOICES)
     url = models.URLField("URL")
 
     def __unicode__(self):
-        return "icon is %s, size is %s, url is %s" % (self.icon, self.size, self.url)
+        return self.url

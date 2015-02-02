@@ -3,5 +3,8 @@
 {% addtoblock "css" %}
     <link rel="stylesheet/less" href="{% static 'css/socialmedia.less' %}" />
 {% endaddtoblock %}
+{% addtoblock "js" %}
+    <script src="{% static 'js/less.js' %}"></script>
+{% endaddtoblock %}
 
 <a class="{{ styleClass }}" href="{{ instance.url }}" title="{{ title }}" target="_blank"></a>

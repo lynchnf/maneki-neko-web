@@ -55,8 +55,7 @@ body {
 .footer {
     background-color: @footer-background-color;
     color: @footer-text-color;
-    
-    
+
     a {
         background-color: @footer-background-muted-color;
         color: @footer-text-muted-color;
@@ -67,10 +66,28 @@ body {
         background-color: @footer-background-accent-color;
         color: @footer-text-accent-color;
     }
+    
+    .footer-text {}
+    
+    .footer-links {
+        a {
+            margin-left: 1em;
+            text-transform: uppercase;
+        }
+    }
 }    
 
 /* Content */
 .content .container {
     background-color: @content-background-color;
     color: @content-text-color;
+    
+    .home-carousel {}
+    
+    .social-links {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .news {}
 }

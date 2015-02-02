@@ -24,7 +24,6 @@
     </div>
     
     {% include "menu.html" %}
-    
 {% endblock base-header %}
 
 {% block base-content %}
@@ -34,10 +33,12 @@
 {% block base-footer %}
     <div class="row">
         <div class="col-md-6">
-            {% static_placeholder "footer-text" %}
+            <div class="footer-text">
+                {% static_placeholder "footer-text" %}
+            </div>
         </div>
         <div class="col-md-6">
-            <div class="pull-right">
+            <div class="footer-links pull-right">
                 {% static_placeholder "footer-links" %}
             </div>
         </div>

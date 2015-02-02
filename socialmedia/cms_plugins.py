@@ -11,17 +11,17 @@ class SocialLinkPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         if instance.size == 1:
-            styleClass = "fa " + instance.icon + " fa-lg"
+            styleClass = "sm fa " + instance.icon + " fa-lg"
         elif instance.size == 2:
-            styleClass = "fa " + instance.icon + " fa-2x"
+            styleClass = "sm fa " + instance.icon + " fa-2x"
         elif instance.size == 3:
-            styleClass = "fa " + instance.icon + " fa-3x"
+            styleClass = "sm fa " + instance.icon + " fa-3x"
         elif instance.size == 4:
-            styleClass = "fa " + instance.icon + " fa-4x"
+            styleClass = "sm fa " + instance.icon + " fa-4x"
         elif instance.size == 5:
-            styleClass = "fa " + instance.icon + " fa-5x"
+            styleClass = "sm fa " + instance.icon + " fa-5x"
         else:
-            styleClass = "fa " + instance.icon;
+            styleClass = "sm fa " + instance.icon;
         context['styleClass'] = styleClass
         
         title = ""
