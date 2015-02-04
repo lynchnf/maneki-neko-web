@@ -3,21 +3,21 @@
 
 {% block con-content %}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12 hidden-xs">
             <div class="home-carousel">
                 {% placeholder "images" %}
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-9 col-sm-push-3">
+            {% placeholder "content" %}
+        </div>
+        <div class="col-sm-3 col-sm-pull-9">
             <div class="social-links">
                 {% placeholder "social-links" %}
             </div>
             <div class="news">
                 {% placeholder "news" %}
             </div>
-        </div>
-        <div class="col-md-9">
-            {% placeholder "content" %}
         </div>
     </div>
 {% endblock con-content %}
