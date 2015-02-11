@@ -10,7 +10,7 @@ You will need a domain registrar (I used GoDaddy) and a hosting provider (I used
   
 2. Buy hosting space.
   - Find a hosting provider you like and buy hosting space.
-  - Create a virtual server. (Your provider may call it an instance or droplet or something else).
+  - Create a virtual server. (Your provider may call it an instance or droplet or something else. Do NOT name the virtual server the same as your domain.)
   - Choose an operation system for your virtual server. (I used Ubuntu 14.04.1 LTS (64 bit).)
 
 3. Log in to your new virtual server.
