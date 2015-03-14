@@ -1,0 +1,128 @@
+{% load cms_tags staticfiles sekizai_tags %}
+
+{% addtoblock "js" %}
+    <script>
+        $(document).ready(function() {
+            // Initialize form.
+            clear_contact_us_{{ instance.id }}();
+            clear_errors_{{ instance.id }}();
+            $("#contact_us_form_{{ instance.id }}").show();
+            
+            // When the send button is pressed ...
+            $("#contact_us_{{ instance.id }}").click(function() {
+                if (validate_contact_us_{{ instance.id }}()) {
+                    var jqXHR = send_contact_us_{{ instance.id }}();
+                    jqXHR.done(function( data, textStatus, jqXHR ) {
+                        alert("Thank you for your message.");
+                        clear_contact_us_{{ instance.id }}();
+                    });
+                    jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
+                        $("#error-list_{{ instance.id }}").append("<li>Message was not sent because of internal server error. Please try again later.</li>");
+                    });
+                }
+                return false;
+            });
+        });
+
+        function clear_contact_us_{{ instance.id }}() {
+            $("#from_email_{{ instance.id }}").val("");
+            $("#to_department_{{ instance.id }}").val("-1");
+            $("#subject_{{ instance.id }}").val("");
+            $("#message_{{ instance.id }}").val("");
+        }
+
+        function clear_errors_{{ instance.id }}() {
+            $("#error-list_{{ instance.id }}").empty();
+            $("#from_email_form-group_{{ instance.id }}").removeClass("error-form-group");
+            $("#to_department_form-group_{{ instance.id }}").removeClass("error-form-group");
+            $("#subject_form-group_{{ instance.id }}").removeClass("error-form-group");
+            $("#message_form-group_{{ instance.id }}").removeClass("error-form-group");
+        }
+
+        function validate_contact_us_{{ instance.id }}() {
+            // Intialize errors.
+            clear_errors_{{ instance.id }}();
+            var errors = [];
+            
+            // Validate from email.
+            if ($("#from_email_{{ instance.id }}").val() == "") {
+                errors[errors.length] = "From Email may not be blank.";
+                $("#from_email_form-group_{{ instance.id }}").addClass("error-form-group");
+            } else {
+                if (!isValidEmailAddress($("#from_email_{{ instance.id }}").val())) {
+                    errors[errors.length] = "From Email must be a valid email address.";
+                    $("#from_email_form-group_{{ instance.id }}").addClass("error-form-group");
+                }
+            }
+            
+            // Validate to department.
+            if ($("#to_department_{{ instance.id }}").val() == "-1") {
+                errors[errors.length] = "To Department may not be blank.";
+                $("#to_department_form-group_{{ instance.id }}").addClass("error-form-group");
+            }
+            
+            // Validate subject.
+            if ($("#subject_{{ instance.id }}").val() == "") {
+                errors[errors.length] = "Subject may not be blank.";
+                $("#subject_form-group_{{ instance.id }}").addClass("error-form-group");
+            }
+            
+            // Validate message.
+            if (errors.length == 0 && $("#message_{{ instance.id }}").val() == "") {
+                if (!confirm("Send this message with no text?")) {
+                    errors[errors.length] = "Message should not be blank.";
+                    $("#message_form-group_{{ instance.id }}").addClass("error-form-group");
+                }
+            }
+            
+            // List the errors.
+            for (i = 0; i < errors.length; ++i) {
+                $("#error-list_{{ instance.id }}").append("<li>" + errors[i] + "</li>");
+            }
+
+            return errors.length == 0;
+        }
+        
+        function isValidEmailAddress(emailAddress) {
+            var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+            return pattern.test(emailAddress);
+        };        
+        
+        function send_contact_us_{{ instance.id }}() {
+            var data = $("#contact_us_form_{{ instance.id }}").serialize();
+            var jqXHR = $.ajax({
+                type: "POST",
+                url: "{% url 'staff:contact_us' %}",
+                data: data
+            });
+            return jqXHR;
+        }
+    </script>
+{% endaddtoblock %}
+
+<ul id="error-list_{{ instance.id }}" class="error-list"></ul>
+<form id="contact_us_form_{{ instance.id }}" onsubmit="return false;" style="display: none;">
+    {% csrf_token %}
+    <div class="form-group" id="from_email_form-group_{{ instance.id }}">
+        <label class="control-label" for="from_email_{{ instance.id }}">From Email</label>
+        <input type="text" class="form-control" id="from_email_{{ instance.id }}" name="from_email" placeholder="From Email Address" />
+    </div>
+    <div class="form-group" id="to_department_form-group_{{ instance.id }}">
+        <label class="control-label" for="to_department_{{ instance.id }}">To Department</label>
+        <select class="form-control" id="to_department_{{ instance.id }}" name="to_department">
+            <option value="-1">Select Department</option>
+            {% for department in departments %}
+                <option value="{{department.id}}">{{department.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group" id="subject_form-group_{{ instance.id }}">
+        <label class="control-label" for="subject_{{ instance.id }}">Subject</label>
+        <input type="text" class="form-control" id="subject_{{ instance.id }}" name="subject" placeholder="Subject" />
+    </div>
+    <div class="form-group" id="message_form-group_{{ instance.id }}">
+        <label class="control-label" for="message_{{ instance.id }}">Message</label>
+        <textarea type="text" class="form-control" id="message_{{ instance.id }}" name="message" rows="5" placeholder="Message"></textarea>
+    </div>
+    <button id="contact_us_{{ instance.id }}" class="btn btn-primary">Send</button>
+</form>

@@ -22,6 +22,16 @@ DATABASES = {
     }
 }
 
+# For production, EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# For development
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+# EMAIL_PORT = 25
+# EMAIL_USE_TLS = False
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -53,8 +63,12 @@ LOGGING = {
             'level': 'DEBUG',
             'handlers': ['console','file']
         },
+        'staff': {
+            'level': 'DEBUG',
+            'handlers': ['console','file']
+        },
 # Everything else goes to the root logger.                
-        'website': {
+        '': {
             'level': 'INFO',
             'handlers': ['console','file']
         }

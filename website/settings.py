@@ -153,7 +153,8 @@ INSTALLED_APPS = (
     'website',
     'navigation',
     'socialmedia',
-    'analytics'
+    'analytics',
+    'staff'
 )
 
 LANGUAGES = (
@@ -221,5 +222,12 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+
+EMAIL_BACKEND = env_settings.EMAIL_BACKEND 
+EMAIL_HOST = env_settings.EMAIL_HOST
+EMAIL_HOST_PASSWORD = env_settings.EMAIL_HOST_PASSWORD
+EMAIL_HOST_USER = env_settings.EMAIL_HOST_USER
+EMAIL_SUBJECT_PREFIX = '[WEBSITE ERROR] '
+CONTACT_US_SUBJECT_PREFIX = '[Maneki Neko Con] '
 
 LOGGING = env_settings.LOGGING
