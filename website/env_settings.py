@@ -29,8 +29,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
-# EMAIL_PORT = 25
-# EMAIL_USE_TLS = False
+EMAIL_USE_TLS = False
+EMAIL_PORT = 25
 
 LOGGING = {
     'version': 1,
@@ -55,15 +55,23 @@ LOGGING = {
         }
     },
     'loggers': {
+        'analytics': {
+            'level': 'DEBUG',
+            'handlers': ['console','file']
+        },
+        'navigation': {
+            'level': 'DEBUG',
+            'handlers': ['console','file']
+        },
         'socialmedia': {
             'level': 'DEBUG',
             'handlers': ['console','file']
         },
-        'website': {
+        'staff': {
             'level': 'DEBUG',
             'handlers': ['console','file']
         },
-        'staff': {
+        'website': {
             'level': 'DEBUG',
             'handlers': ['console','file']
         },
