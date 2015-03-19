@@ -183,6 +183,7 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ('con-home.html', 'Convention home page'),
     ('con-other.html', 'Other Convention page'),
+    ('con-full.html', 'Full Width Convention page'),
     ('corp.html', 'Sponsoring corporation page')
 )
 
