@@ -5,6 +5,7 @@
 
 {% block base-header %}
     {% addtoblock "css" %}
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Quintessential' type='text/css'>
         <link rel="stylesheet/less" href="{% static 'css/convention.less' %}" />
     {% endaddtoblock %}
     {% addtoblock "js" %}
@@ -36,13 +37,13 @@
 
 {% block base-footer %}
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-md-8 col-sm-7">
             <div class="footer-text">
                 {% static_placeholder "footer-text" %}
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="footer-links pull-right">
+        <div class="col-md-4 col-sm-5">
+            <div class="footer-links">
                 {% static_placeholder "footer-links" %}
             </div>
         </div>
