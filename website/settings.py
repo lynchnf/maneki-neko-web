@@ -151,9 +151,10 @@ INSTALLED_APPS = (
     'cmsplugin_gallery',
     'reversion',
     'website',
+    'analytics',
+    'headtags',
     'navigation',
     'socialmedia',
-    'analytics',
     'staff'
 )
 
@@ -190,6 +191,9 @@ CMS_TEMPLATES = (
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {
+    'meta': {
+        'plugins': ['MetaTagPlugin']
+    },
     'analytics': {
         'plugins': ['GoogleAnalyticsPlugin']
     },

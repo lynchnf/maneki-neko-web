@@ -12,6 +12,10 @@
         <script src="{% static 'js/less.js' %}"></script>
     {% endaddtoblock %}
     
+    {% addtoblock "meta" %}
+        {% placeholder "meta" %}
+    {% endaddtoblock %}
+
     {% addtoblock "analytics" %}
         {% placeholder "analytics" inherit %}
     {% endaddtoblock %}
