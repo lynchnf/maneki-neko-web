@@ -1,5 +1,5 @@
 from django.contrib import admin
-from staff.models import Department, Position, ContactUsLog
+from staff.models import ContactUsLog, Department, Position
 
 class PositionInline(admin.TabularInline):
     model = Position
@@ -14,7 +14,7 @@ class DepartmentAdmin(admin.ModelAdmin):
 admin.site.register(Department, DepartmentAdmin)
 
 class ContactUsLogAdmin(admin.ModelAdmin):
-    list_display = ['from_email', 'to_department', 'to_email', 'subject', 'timestamp', 'sent_successfully']
+    list_display = ['from_email', 'to_department_id', 'to_department', 'to_email', 'subject', 'timestamp', 'sent_successfully']
 
 admin.site.register(ContactUsLog, ContactUsLogAdmin)
 

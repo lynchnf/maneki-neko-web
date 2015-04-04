@@ -33,10 +33,10 @@
 
         function clear_errors_{{ instance.id }}() {
             $("#error-list_{{ instance.id }}").empty();
-            $("#from_email_form-group_{{ instance.id }}").removeClass("error-form-group");
-            $("#to_department_form-group_{{ instance.id }}").removeClass("error-form-group");
-            $("#subject_form-group_{{ instance.id }}").removeClass("error-form-group");
-            $("#message_form-group_{{ instance.id }}").removeClass("error-form-group");
+            $("#from_email_form-group_{{ instance.id }}").removeClass("has-error");
+            $("#to_department_form-group_{{ instance.id }}").removeClass("has-error");
+            $("#subject_form-group_{{ instance.id }}").removeClass("has-error");
+            $("#message_form-group_{{ instance.id }}").removeClass("has-error");
         }
 
         function validate_contact_us_{{ instance.id }}() {
@@ -47,31 +47,31 @@
             // Validate from email.
             if ($("#from_email_{{ instance.id }}").val() == "") {
                 errors[errors.length] = "From Email may not be blank.";
-                $("#from_email_form-group_{{ instance.id }}").addClass("error-form-group");
+                $("#from_email_form-group_{{ instance.id }}").addClass("has-error");
             } else {
                 if (!isValidEmailAddress($("#from_email_{{ instance.id }}").val())) {
                     errors[errors.length] = "From Email must be a valid email address.";
-                    $("#from_email_form-group_{{ instance.id }}").addClass("error-form-group");
+                    $("#from_email_form-group_{{ instance.id }}").addClass("has-error");
                 }
             }
             
             // Validate to department.
             if ($("#to_department_{{ instance.id }}").val() == "-1") {
                 errors[errors.length] = "To Department may not be blank.";
-                $("#to_department_form-group_{{ instance.id }}").addClass("error-form-group");
+                $("#to_department_form-group_{{ instance.id }}").addClass("has-error");
             }
             
             // Validate subject.
             if ($("#subject_{{ instance.id }}").val() == "") {
                 errors[errors.length] = "Subject may not be blank.";
-                $("#subject_form-group_{{ instance.id }}").addClass("error-form-group");
+                $("#subject_form-group_{{ instance.id }}").addClass("has-error");
             }
             
             // Validate message.
             if (errors.length == 0 && $("#message_{{ instance.id }}").val() == "") {
                 if (!confirm("Send this message with no text?")) {
                     errors[errors.length] = "Message should not be blank.";
-                    $("#message_form-group_{{ instance.id }}").addClass("error-form-group");
+                    $("#message_form-group_{{ instance.id }}").addClass("has-error");
                 }
             }
             
@@ -100,7 +100,7 @@
     </script>
 {% endaddtoblock %}
 
-<ul id="error-list_{{ instance.id }}" class="error-list"></ul>
+<ul id="error-list_{{ instance.id }}" class="text-danger"></ul>
 <form id="contact_us_form_{{ instance.id }}" onsubmit="return false;" style="display: none;">
     {% csrf_token %}
     <div class="form-group" id="from_email_form-group_{{ instance.id }}">
