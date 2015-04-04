@@ -10,8 +10,8 @@ logger = logging.getLogger(__name__)
 def contact_us(request):
     contactUsLog = ContactUsLog()
     contactUsLog.from_email = request.POST.get('from_email')
-    contactUsLog.to_department_id = request.POST.get('to_department')
-    to_department = Department.objects.get(pk=contactUsLog.to_department_id)
+    to_department_id = request.POST.get('to_department')
+    to_department = Department.objects.get(pk=to_department_id)
     contactUsLog.to_department = to_department.name
     contactUsLog.to_email = to_department.email
     contactUsLog.subject = request.POST.get('subject')
@@ -30,11 +30,12 @@ def contact_us(request):
     email_message.from_email = contactUsLog.from_email
     email_message.to = [contactUsLog.to_email]
     
-    if not to_department.chair:
-        email_message.cc = []
-        cc_departments = Department.objects.filter(chair=True)
-        for cc_department in cc_departments:
-            email_message.cc.append(cc_department.email)
+    cc = []
+    cc_departments = Department.objects.filter(chair=True).exclude(id=to_department_id)
+    for cc_department in cc_departments:
+        cc.append(cc_department.email)
+    if cc:
+        email_message.cc = cc
 
     try:
         email_message.send()

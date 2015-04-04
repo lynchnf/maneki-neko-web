@@ -25,7 +25,6 @@ class Position(models.Model):
 
 class ContactUsLog(models.Model):
     from_email = models.EmailField()
-    to_department_id = models.IntegerField(blank=True, null=True) 
     to_department = models.CharField(max_length=100)
     to_email = models.EmailField()
     subject = models.CharField(max_length=255)
