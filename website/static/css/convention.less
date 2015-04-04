@@ -1,18 +1,25 @@
 @default-background-color: #ffffff;
 
-@header-background-color: #ffffff;
-@header-text-color: #333333;
-@header-background-accent-color: #333333;
-@header-text-accent-color: #cccccc;
-@header-background-muted-color: transparent;
-@header-text-muted-color: #666666;
+@navigation-background-color: #333333;
+@navigation-text-color: #dca62a;
+@navigation-background-accent-color: @navigation-text-color;
+@navigation-text-accent-color: @navigation-background-color;
+@navigation-background-muted-color: transparent;
+@navigation-text-muted-color: darken(@navigation-text-color, 20%);
 
-@footer-background-color: #cccccc;
-@footer-text-color: difference(#ffffff, @footer-background-color);
+@header-background-color: #000000;
+@header-text-color: #dca62a;
+@header-background-accent-color: #333333;
+@header-text-accent-color: lighten(@header-text-color, 20%);
+@header-background-muted-color: transparent;
+@header-text-muted-color: darken(@footer-text-color, 20%);
+
+@footer-background-color: @header-background-color;
+@footer-text-color: @header-text-color;
 @footer-background-accent-color: transparent;
-@footer-text-accent-color: darken(@footer-text-color, 20%);
+@footer-text-accent-color: @header-text-accent-color;
 @footer-background-muted-color: transparent;
-@footer-text-muted-color: lighten(@footer-text-color, 20%);
+@footer-text-muted-color: @header-text-muted-color;
 
 @content-background-color: #ffffff;
 @content-text-color: #333333;
@@ -22,12 +29,124 @@
 @content-text-muted-color: lighten(@content-text-color, 40%);
 
 @default-font: Verdana, Geneva, sans-serif;
-@accent-font: Pristina, 'Brush Script MT', 'Brush Script', 'Apple Chancery','URW Chancery L', cursive;
+@accent-font: 'Quintessential', cursive;
 
 /* General Styles */
 body {
     background-color: @default-background-color;
     font-family: @default-font;
+}
+
+/* Navigation Styles */
+.navbar {
+    margin-bottom: 0;
+    min-height: 22px;
+}
+
+.navbar-brand {
+    font-size: 14px;
+    height: 22px;
+    padding: 2px 15px;
+}
+
+.navbar-default {
+    background-color: @navigation-background-color;
+    border-color: @navigation-text-muted-color;
+}
+
+.navbar-nav > li > a {
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.navbar-toggle {
+    margin-bottom: 2px;
+    margin-right: 15px;
+    margin-top: 2px;
+    padding: 4px 5px;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: @navigation-background-color;
+    color: @navigation-text-color;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: @navigation-background-accent-color;
+    color: @navigation-text-accent-color;
+}
+
+.dropdown-menu {
+    background-color: @navigation-background-color;
+    border-color: @navigation-text-muted-color;
+}
+
+.dropdown-menu > li > a,
+.dropdown-menu > li > a:focus {
+    background-color: @navigation-background-color;
+    color: @navigation-text-color;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+    background-color: @navigation-background-accent-color;
+    color: @navigation-text-accent-color;
+}
+
+.nav .open > a,
+.nav .open > a:focus {
+    background-color: @navigation-background-color;
+    color: @navigation-text-color;
+}
+
+.nav .open > a:hover {
+    background-color: @navigation-background-accent-color;
+    color: @navigation-text-accent-color;
+}
+
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle:focus {
+    background-color: @navigation-background-color;
+    border-color: @navigation-text-muted-color;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: @navigation-background-accent-color;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: @navigation-text-muted-color;
+}
+
+.navbar-default .navbar-collapse {
+    border-color: @navigation-text-muted-color;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        background-color: @navigation-background-color;
+        color: @navigation-text-color;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        background-color: @navigation-background-accent-color;
+        color: @navigation-text-accent-color;
+    }
 }
 
 /* Navigation Styles */
@@ -160,49 +279,34 @@ body {
         font-family: @accent-font;
         font-size: 50px;
         line-height: 1;
+        margin-bottom: 10px;
         margin-top: 15px;
         text-align: center;
     }
 
     @media ( min-width : 992px) {
         .con-name {
-            font-size: 56px;
+            font-size: 51px;
             margin-top: 25px;
             text-align: left;
         }
         .con-dates {
-            font-size: 42px;
-            margin-top: 15px;
+            font-size: 37px;
+            margin-top: 20px;
             text-align: right;
         }
     }
     @media ( min-width : 1200px) {
         .con-name {
-            font-size: 68px;
-            margin-top: 25px;
+            font-size: 62px;
+            margin-top: 40px;
             text-align: left;
         }
         .con-dates {
-            font-size: 50px;
-            margin-top: 15px;
+            font-size: 46px;
+            margin-top: 30px;
             text-align: right;
         }
-    }
-
-    .navbar {
-        margin-bottom: 0;
-        min-height: 22px;
-    }
-
-    .navbar-brand {
-        font-size: 14px;
-        height: 22px;
-        padding: 2px 15px;
-    }
-    
-    .navbar-nav > li > a {
-        padding-bottom: 2px;
-        padding-top: 2px;
     }
 }
 
@@ -222,12 +326,27 @@ body {
         color: @footer-text-accent-color;
     }
     
-    .footer-text {}
+    .footer-text {
+        text-align: center;
+    }
+
+    @media ( min-width : 768px) {
+        .footer-text {
+            text-align: left;
+        }
+    }
     
     .footer-links {
+        text-align: center;
         a {
             margin-left: 1em;
             text-transform: uppercase;
+        }
+    }
+
+    @media ( min-width : 768px) {
+        .footer-links {
+            text-align: right;
         }
     }
 }    

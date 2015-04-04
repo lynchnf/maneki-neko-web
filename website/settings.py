@@ -151,9 +151,10 @@ INSTALLED_APPS = (
     'cmsplugin_gallery',
     'reversion',
     'website',
+    'analytics',
+    'headtags',
     'navigation',
     'socialmedia',
-    'analytics',
     'staff'
 )
 
@@ -183,12 +184,16 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ('con-home.html', 'Convention home page'),
     ('con-other.html', 'Other Convention page'),
+    ('con-full.html', 'Full Width Convention page'),
     ('corp.html', 'Sponsoring corporation page')
 )
 
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {
+    'meta': {
+        'plugins': ['MetaTagPlugin']
+    },
     'analytics': {
         'plugins': ['GoogleAnalyticsPlugin']
     },
@@ -225,8 +230,10 @@ THUMBNAIL_PROCESSORS = (
 
 EMAIL_BACKEND = env_settings.EMAIL_BACKEND 
 EMAIL_HOST = env_settings.EMAIL_HOST
-EMAIL_HOST_PASSWORD = env_settings.EMAIL_HOST_PASSWORD
 EMAIL_HOST_USER = env_settings.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = env_settings.EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS = env_settings.EMAIL_USE_TLS
+EMAIL_PORT = env_settings.EMAIL_PORT
 EMAIL_SUBJECT_PREFIX = '[WEBSITE ERROR] '
 CONTACT_US_SUBJECT_PREFIX = '[Maneki Neko Con] '
 
