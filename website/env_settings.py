@@ -31,6 +31,7 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_PORT = 25
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
 
 LOGGING = {
     'version': 1,
@@ -51,7 +52,7 @@ LOGGING = {
         'file': {
             'formatter': 'file_fmt',
             'class': 'logging.handlers.WatchedFileHandler',
-            'filename': 'maneki-neko-web.log'
+            'filename': '/tmp/maneki-neko-web.log'
         }
     },
     'loggers': {

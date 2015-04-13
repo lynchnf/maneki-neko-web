@@ -104,30 +104,15 @@ You will need a domain registrar (I used GoDaddy) and a hosting provider (I used
   
 17. Change other production settings.
   - DEBUG and TEMPLATE_DEBUG should be False.
+  - ADMINS and MANAGERS should be (('Webmaster', 'webmaster@domain.com'))
   - ALLOWED_HOSTS should be your host names, e.g. ["domain.com", "www.domain.com"].
   - Update password for database.
-  - Change location of log file to /var/log/maneki-neko-web/website.log.
-  - Change log levels to WARN.
+  - Set up email later. See [EMAIL_SETUP.md](https://github.com/lynchnf/maneki-neko-web/blob/master/EMAIL_SETUP.md)
+  - Set up logging later. See [LOGGING_SETUP.md](https://github.com/lynchnf/maneki-neko-web/blob/master/LOGGING_SETUP.md)
   - Save and exit.
   - `rm -rf junk`
-  
-18. Setup logging.  
-  - `cd /var/log/`
-  - `sudo mkdir maneki-neko-web`
-  - `sudo chmmod 777 maneki-neko-web`
-  - `cd maneki-neko-web`
-  - `sudo touch website.log`
-  - `sudo chmod 666 website.log`
-  - `cd /etc/logrotate.d`
-  - `sudo nano maneki-neko-web`
-  - Enter the following, then save and exit:
-```
-    /var/log/maneki-neko-web/*.log {
-        daily
-        rotate 30
-    }
-```
 
+18. Configure apache.
 cd /etc/apache2/sites-available/
 sudo cp 000-default.conf maneki-neko-web.conf
 sudo nano maneki-neko-web.conf
@@ -154,3 +139,4 @@ python manage.py migrate --fake
 browse to website admin
 edit site record
 add home page
+
