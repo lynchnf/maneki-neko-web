@@ -110,7 +110,7 @@
         <select class="form-control" id="to_department_{{ instance.id }}" name="to_department">
             <option value="-1">Select Department</option>
             {% for department in departments %}
-                <option value="{{department.id}}">{{department.name}}</option>
+                <option value="{{ department.id }}">{{ department.name }}</option>
             {% endfor %}
         </select>
     </div>

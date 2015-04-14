@@ -11,7 +11,7 @@ class ContactUsPlugin(CMSPluginBase):
     render_template = "contact_us.html"
 
     def render(self, context, instance, placeholder):
-        departments = Department.objects.order_by('-chair','name');
+        departments = Department.objects.order_by('-chair','name')
         context['departments'] = departments
         context['instance'] = instance
         return context
