@@ -19,6 +19,7 @@ class Position(models.Model):
     user = models.ForeignKey(User)     
     department = models.ForeignKey(Department)     
     title = models.IntegerField(choices=TITLE_CHOICES)
+    special_title_name = models.CharField(max_length=50, blank=True, null=True)
 
     def __unicode__(self):
         return "%s - %s (%s)" % (self.department.name, self.user.get_full_name(), self.get_title_display())    
