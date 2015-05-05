@@ -18,7 +18,7 @@
                     $("#email_list_{{ instance.id }} tbody").empty();
                     for (var i = 0; i < emails.length; i++) {
                         email = emails[i];
-                        row = "<tr><td>" + email["from_email"] + "</td>" +
+                        row = "<tr><td><a href=\"#\">" + email["from_email"] + "</a></td>" +
                             "<td>" + email.to + "</td>" +
                             "<td>" + email.subject + "</td>" +
                             "<td>" + email.timestamp + "</td>" +
