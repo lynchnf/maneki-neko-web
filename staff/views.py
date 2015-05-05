@@ -114,6 +114,7 @@ def email_list(request):
     emails = []
     for log_entry in email_log:
         email = {}
+        email["id"] = log_entry.id
         email["from_email"] = log_entry.from_email
         email["to"] = log_entry.to
         email["subject"] = log_entry.subject

@@ -3,59 +3,74 @@
 {% addtoblock "js" %}
     <script>
         $(document).ready(function() {
-            clear_errors_{{ instance.id }}();
             
             // If there is an email id, show that email.
             var emailId = getQueryVariable("emailId");
             if (emailId != null && emailId != "") {
-                var jqXHR = fetch_email_instance_{{ instance.id }}(emailId);
-                jqXHR.done(function( data, textStatus, jqXHR ) {
-                    var email = data.email;
-                    $("#from_email_{{ instance.id }}").html(email.from_email);
-                    $("#to_email_{{ instance.id }}").html(email.to);
-                    $("#cc_email_{{ instance.id }}").html(email.cc);
-                    $("#email_timestamp_{{ instance.id }}").html(email.timestamp);
-                    $("#email_sent_successfully_{{ instance.id }}").html(email.sent_successfully);
-                    $("#email_subject_{{ instance.id }}").html(email.subject);
-                    $("#email_body_{{ instance.id }}").html(email.body);
-                    $("#email_instance_{{ instance.id }}").show();
-                });
-                jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
-                    if (errorThrown == "FORBIDDEN") {
-                        $("#error_list_{{ instance.id }}").append("<li>Forbidden. You do not have authorization to view this page.</li>");
-                    } else if (errorThrown == "NOT FOUND") {
-                        $("#error_list_{{ instance.id }}").append("<li>Not found. This email does not exist on our server.</li>");
-                    } else {
-                        $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
-                    }
-                });
+                show_email_instance_{{ instance.id }}(emailId);
             } else {
                 // Otherwise, there is no email id. Show list of emails.
-                var jqXHR = fetch_email_list_{{ instance.id }}();
-                jqXHR.done(function( data, textStatus, jqXHR ) {
-                    var emails = data.emails;
-                    $("#email_list_{{ instance.id }} tbody").empty();
-                    for (var i = 0; i < emails.length; i++) {
-                        email = emails[i];
-                        row = "<tr><td><a href=\"#\">" + email["from_email"] + "</a></td>" +
-                            "<td>" + email.to + "</td>" +
-                            "<td>" + email.subject + "</td>" +
-                            "<td>" + email.timestamp + "</td>" +
-                            "<td>" + email.sent_successfully + "</td></tr>"
-                        $("#email_list_{{ instance.id }} tbody").append(row);
-                    }
-                    $("#email_list_{{ instance.id }}").show();
-                });
-                jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
-                    if (errorThrown == "FORBIDDEN") {
-                        $("#error_list_{{ instance.id }}").append("<li>Forbidden. You do not have authorization to view this page.</li>");
-                    } else {
-                        $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
-                    }
-                });
+                show_email_list_{{ instance.id }}();
             }
         });
+        
+        function show_email_instance_{{ instance.id }}(emailId) {
+            clear_page_{{ instance.id }}();
+            var jqXHR = fetch_email_instance_{{ instance.id }}(emailId);
+            jqXHR.done(function( data, textStatus, jqXHR ) {
+                var email = data.email;
+                $("#from_email_{{ instance.id }}").html(email.from_email);
+                $("#to_email_{{ instance.id }}").html(email.to);
+                $("#cc_email_{{ instance.id }}").html(email.cc);
+                $("#email_timestamp_{{ instance.id }}").html(email.timestamp);
+                $("#email_sent_successfully_{{ instance.id }}").html(email.sent_successfully);
+                $("#email_subject_{{ instance.id }}").html(email.subject);
+                $("#email_body_{{ instance.id }}").html(email.body);
+                $("#email_instance_{{ instance.id }}").show();
+            });
+            jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
+                if (errorThrown == "FORBIDDEN") {
+                    $("#error_list_{{ instance.id }}").append("<li>Forbidden. You do not have authorization to view this page.</li>");
+                } else if (errorThrown == "NOT FOUND") {
+                    $("#error_list_{{ instance.id }}").append("<li>Not found. This email does not exist on our server.</li>");
+                } else {
+                    $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
+                }
+            });
+        }
 
+        function show_email_list_{{ instance.id }}() {
+            clear_page_{{ instance.id }}();
+            var jqXHR = fetch_email_list_{{ instance.id }}();
+            jqXHR.done(function( data, textStatus, jqXHR ) {
+                var emails = data.emails;
+                $("#email_list_{{ instance.id }} tbody").empty();
+                for (var i = 0; i < emails.length; i++) {
+                    email = emails[i];
+                    row = "<tr><td><a href=\"#\" onclick=\"show_email_instance_{{ instance.id }}(" + email.id + ");\" >" + email.from_email + "</a></td>" +
+                        "<td>" + email.to + "</td>" +
+                        "<td>" + email.subject + "</td>" +
+                        "<td>" + email.timestamp + "</td>" +
+                        "<td>" + email.sent_successfully + "</td></tr>"
+                    $("#email_list_{{ instance.id }} tbody").append(row);
+                }
+                $("#email_list_{{ instance.id }}").show();
+            });
+            jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
+                if (errorThrown == "FORBIDDEN") {
+                    $("#error_list_{{ instance.id }}").append("<li>Forbidden. You do not have authorization to view this page.</li>");
+                } else {
+                    $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
+                }
+            });
+        }
+
+        function clear_page_{{ instance.id }}() {
+            clear_errors_{{ instance.id }}();
+            $("#email_instance_{{ instance.id }}").hide();
+            $("#email_list_{{ instance.id }}").hide();
+        }
+        
         function clear_errors_{{ instance.id }}() {
             $("#error_list_{{ instance.id }}").empty();
         }
@@ -131,8 +146,12 @@
         <label class="control-label" for="email_body_{{ instance.id }}">Message</label>
         <p class="form-control-static" id="email_body_{{ instance.id }}"></p>
     </div>
-    <button id="reply_{{ instance.id }}" class="btn btn-primary">Reply</button>
-    <button id="list_{{ instance.id }}" class="btn btn-default">Email List</button>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="reply_{{ instance.id }}" class="btn btn-primary">Reply</button>
+            <button id="list_{{ instance.id }}" class="btn btn-default" onclick="show_email_list_{{ instance.id }}();">Email List</button>
+        </div>
+    </div>
 </form>
 
 <div id="email_list_{{ instance.id }}" class="table-responsive" style="display: none;">
