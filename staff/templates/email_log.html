@@ -2,17 +2,36 @@
 
 {% addtoblock "js" %}
     <script>
-        var currentUserId = "{{ request.user.id }}";
         $(document).ready(function() {
             clear_errors_{{ instance.id }}();
             
             // If there is an email id, show that email.
             var emailId = getQueryVariable("emailId");
             if (emailId != null && emailId != "") {
-                $("#email_instance_{{ instance.id }}").show();
+                var jqXHR = fetch_email_instance_{{ instance.id }}(emailId);
+                jqXHR.done(function( data, textStatus, jqXHR ) {
+                    var email = data.email;
+                    $("#from_email_{{ instance.id }}").html(email.from_email);
+                    $("#to_email_{{ instance.id }}").html(email.to);
+                    $("#cc_email_{{ instance.id }}").html(email.cc);
+                    $("#email_timestamp_{{ instance.id }}").html(email.timestamp);
+                    $("#email_sent_successfully_{{ instance.id }}").html(email.sent_successfully);
+                    $("#email_subject_{{ instance.id }}").html(email.subject);
+                    $("#email_body_{{ instance.id }}").html(email.body);
+                    $("#email_instance_{{ instance.id }}").show();
+                });
+                jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
+                    if (errorThrown == "FORBIDDEN") {
+                        $("#error_list_{{ instance.id }}").append("<li>Forbidden. You do not have authorization to view this page.</li>");
+                    } else if (errorThrown == "NOT FOUND") {
+                        $("#error_list_{{ instance.id }}").append("<li>Not found. This email does not exist on our server.</li>");
+                    } else {
+                        $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
+                    }
+                });
             } else {
                 // Otherwise, there is no email id. Show list of emails.
-                var jqXHR = fetch_email_list_{{ instance.id }}(currentUserId);
+                var jqXHR = fetch_email_list_{{ instance.id }}();
                 jqXHR.done(function( data, textStatus, jqXHR ) {
                     var emails = data.emails;
                     $("#email_list_{{ instance.id }} tbody").empty();
@@ -25,25 +44,37 @@
                             "<td>" + email.sent_successfully + "</td></tr>"
                         $("#email_list_{{ instance.id }} tbody").append(row);
                     }
+                    $("#email_list_{{ instance.id }}").show();
                 });
                 jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
-                    $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
+                    if (errorThrown == "FORBIDDEN") {
+                        $("#error_list_{{ instance.id }}").append("<li>Forbidden. You do not have authorization to view this page.</li>");
+                    } else {
+                        $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
+                    }
                 });
-                $("#email_list_{{ instance.id }}").show();
             }
         });
 
         function clear_errors_{{ instance.id }}() {
             $("#error_list_{{ instance.id }}").empty();
         }
-
-        function fetch_email_list_{{ instance.id }}(currentUserId) {
+        
+        function fetch_email_instance_{{ instance.id }}(emailId) {
             var data = {};
-            data["currentUserId"] = currentUserId; 
+            data["emailId"] = emailId;
             var jqXHR = $.ajax({
                 type: "GET",
-                url: "{% url 'staff:email_list' %}",
+                url: "{% url 'staff:email_instance' %}",
                 data: data
+            });
+            return jqXHR;
+        }
+
+        function fetch_email_list_{{ instance.id }}() {
+            var jqXHR = $.ajax({
+                type: "GET",
+                url: "{% url 'staff:email_list' %}"
             });
             return jqXHR;
         }
@@ -64,8 +95,44 @@
 
 <ul id="error_list_{{ instance.id }}" class="text-danger"></ul>
 
-<form id="email_instance_{{ instance.id }}" onsubmit="return false;" style="display: none;">
-    <p>Email Instance</p>
+<form id="email_instance_{{ instance.id }}" class="form-horizontal" onsubmit="return false;" style="display: none;">
+    {% csrf_token %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="from_email_{{ instance.id }}">From Email</label>
+        <div class="col-sm-4">        
+            <p class="form-control-static" id="from_email_{{ instance.id }}"></p>
+        </div>
+        <label class="col-sm-2 control-label" for="to_email_{{ instance.id }}">To</label>
+        <div class="col-sm-4">        
+            <p class="form-control-static" id="to_email_{{ instance.id }}"></p>
+        </div>
+        <label class="col-sm-offset-6 col-sm-2 control-label" for="cc_email_{{ instance.id }}">CC</label>
+        <div class="col-sm-4">        
+            <p class="form-control-static" id="cc_email_{{ instance.id }}"></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="email_timestamp_{{ instance.id }}">Timestamp</label>
+        <div class="col-sm-3">        
+            <p class="form-control-static" id="email_timestamp_{{ instance.id }}">foo</p>
+        </div>
+        <label class="col-sm-3 control-label" for="email_sent_successfully_{{ instance.id }}">Sent Successfully</label>
+        <div class="col-sm-4">        
+            <p class="form-control-static" id="email_sent_successfully_{{ instance.id }}">bar</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="email_subject_{{ instance.id }}">Subject</label>
+        <div class="col-sm-10">        
+            <p class="form-control-static" id="email_subject_{{ instance.id }}"></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="email_body_{{ instance.id }}">Message</label>
+        <p class="form-control-static" id="email_body_{{ instance.id }}"></p>
+    </div>
+    <button id="reply_{{ instance.id }}" class="btn btn-primary">Reply</button>
+    <button id="list_{{ instance.id }}" class="btn btn-default">Email List</button>
 </form>
 
 <div id="email_list_{{ instance.id }}" class="table-responsive" style="display: none;">

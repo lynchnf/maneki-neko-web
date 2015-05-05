@@ -1,5 +1,5 @@
 from django.core.mail.message import EmailMessage
-from django.http.response import HttpResponse, HttpResponseServerError
+from django.http.response import HttpResponse, HttpResponseServerError, HttpResponseForbidden, HttpResponseNotFound
 from django.utils import timezone
 from staff.models import Department, EmailLog, Position
 from website import settings
@@ -52,29 +52,74 @@ def contact_us(request):
         logger.exception("Error sending email. from_email=" + str(emailLog.from_email) + ", to_department=" + str(emailLog.department) + ", subject=" + str(emailLog.subject))
         return HttpResponseServerError()
 
-def email_list(request):
-    emails = []
-    if request.user.is_authenticated() and request.user.is_active:
-        email_log = []
-            
-        # Is the current user con-chair (or vice-chair)? Try to find a position record.
-        position = Position.objects.filter(user__id=request.user.id,title__in=[1,2],department__chair=True)
-        # If the user is a super-user or a con-chair, show all the emails.
-        if request.user.is_superuser or position.exists():
-            email_log = EmailLog.objects.order_by("-timestamp")
-        else:
-            # Otherwise, show just the emails for the departments that the current user is head or second of.
-            departmentIds = Position.objects.filter(user__id=request.user.id,title__in=[1,2]).values('department')
-            email_log = EmailLog.objects.filter(department__id__in=departmentIds).order_by("-timestamp")
+def email_instance(request):
+    # If the current user is not logged in, access is denied.
+    if not request.user.is_authenticated() or not request.user.is_active:
+        return HttpResponseForbidden()
+    
+    # Does this email actually exist?
+    emailId = request.GET.get("emailId")
+    emailLog = None
+    try:
+        emailLog = EmailLog.objects.get(pk=emailId)
+    except EmailLog.DoesNotExist:
+        return HttpResponseNotFound()
+    
+    # Is the current user con-chair (or vice-chair)? Try to find a position record.
+    position = Position.objects.filter(user__id=request.user.id,title__in=[1,2],department__chair=True)
+    # If the user is a super-user or a con-chair, then he can see the email.
+    # Otherwise, ...
+    if not request.user.is_superuser and not position.exists():
+        # ... the email must be for a department that the current user is head or second of.
+        position = Position.objects.filter(user__id=request.user.id,title__in=[1,2],department__id=emailLog.department.id)
+        if not position.exists():
+            return HttpResponseForbidden()
+        
+    email = {}
+    email["from_email"] = emailLog.from_email
+    email["to"] = emailLog.to
+    email["cc"] = emailLog.cc
+    email["subject"] = emailLog.subject
+    email["body"] = emailLog.body
+    email["timestamp"] = emailLog.timestamp.strftime("%Y-%m-%d %I:%M %p")
+    email["sent_successfully"] = emailLog.sent_successfully
+        
+    context = {}
+    context["email"] = email
 
-        for log_entry in email_log:
-            email = {}
-            email["from_email"] = log_entry.from_email
-            email["to"] = log_entry.to
-            email["subject"] = log_entry.subject
-            email["timestamp"] = log_entry.timestamp.strftime("%Y-%m-%d %I:%M %p")
-            email["sent_successfully"] = log_entry.sent_successfully
-            emails.append(email);
+    try:
+        content = json.dumps(context)
+        return HttpResponse(content, content_type='application/json')
+    except:
+        logger.exception("Error serializing email with id=" + str(emailId))
+        return HttpResponseServerError()
+
+def email_list(request):
+    # If the current user is not logged in, access is denied.
+    if not request.user.is_authenticated() or not request.user.is_active:
+        return HttpResponseForbidden()
+    
+    email_log = []
+            
+    # Is the current user con-chair (or vice-chair)? Try to find a position record.
+    position = Position.objects.filter(user__id=request.user.id,title__in=[1,2],department__chair=True)
+    # If the user is a super-user or a con-chair, show all the emails.
+    if request.user.is_superuser or position.exists():
+        email_log = EmailLog.objects.order_by("-timestamp")
+    else:
+        # Otherwise, show just the emails for the departments that the current user is head or second of.
+        departmentIds = Position.objects.filter(user__id=request.user.id,title__in=[1,2]).values('department')
+        email_log = EmailLog.objects.filter(department__id__in=departmentIds).order_by("-timestamp")
+
+    emails = []
+    for log_entry in email_log:
+        email = {}
+        email["from_email"] = log_entry.from_email
+        email["to"] = log_entry.to
+        email["subject"] = log_entry.subject
+        email["timestamp"] = log_entry.timestamp.strftime("%Y-%m-%d %I:%M %p")
+        email["sent_successfully"] = log_entry.sent_successfully
+        emails.append(email);
 
     context = {}
     context["emails"] = emails
@@ -83,5 +128,5 @@ def email_list(request):
         content = json.dumps(context)
         return HttpResponse(content, content_type='application/json')
     except:
-        logger.exception("Error getting email list.")
-        return HttpResponseServerError() 
+        logger.exception("Error serializing email list.")
+        return HttpResponseServerError()
