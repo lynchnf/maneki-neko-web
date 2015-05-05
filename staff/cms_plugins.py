@@ -1,9 +1,8 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
-from staff.models import Department
+from staff.models import Department, EmailLog, Position
 from django.contrib.auth.models import User
-from staff.models import Position
 
 import logging
 
@@ -24,12 +23,6 @@ class EmailLogPlugin(CMSPluginBase):
     render_template = "email_log.html"
 
     def render(self, context, instance, placeholder):
-        
-        
-        request = context['request']
-        current_user = request.user        
-        
-        context['current_user'] = current_user
         context['instance'] = instance
         return context
 

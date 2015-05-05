@@ -35,3 +35,16 @@ class ContactUsLog(models.Model):
     
     def __unicode__(self):
         return "%s: %s" % (self.to_department, self.subject)
+    
+class EmailLog(models.Model):
+    subject = models.CharField(max_length=255)
+    body = models.TextField(blank=True, null=True)
+    from_email = models.EmailField()
+    to = models.CharField(max_length=255, blank=True, null=True)
+    cc = models.CharField(max_length=255, blank=True, null=True)
+    department = models.ForeignKey(Department, blank=True, null=True)     
+    timestamp = models.DateTimeField()
+    sent_successfully = models.BooleanField()
+
+    def __unicode__(self):
+        return "%s: %s" % (self.from_email, self.subject)

@@ -1,5 +1,85 @@
-{% load cms_tags %}
+{% load cms_tags staticfiles sekizai_tags %}
 
-<p>Email Log here</p>
-<h1>Hello {% if request.user.is_authenticated %}{{ request.user.first_name }} {{ request.user.last_name}}{% else %}Guest{% endif %}</h1>
-<p>{{ current_user }}</p>
+{% addtoblock "js" %}
+    <script>
+        var currentUserId = "{{ request.user.id }}";
+        $(document).ready(function() {
+            clear_errors_{{ instance.id }}();
+            
+            // If there is an email id, show that email.
+            var emailId = getQueryVariable("emailId");
+            if (emailId != null && emailId != "") {
+                $("#email_instance_{{ instance.id }}").show();
+            } else {
+                // Otherwise, there is no email id. Show list of emails.
+                var jqXHR = fetch_email_list_{{ instance.id }}(currentUserId);
+                jqXHR.done(function( data, textStatus, jqXHR ) {
+                    var emails = data.emails;
+                    $("#email_list_{{ instance.id }} tbody").empty();
+                    for (var i = 0; i < emails.length; i++) {
+                        email = emails[i];
+                        row = "<tr><td>" + email["from_email"] + "</td>" +
+                            "<td>" + email.to + "</td>" +
+                            "<td>" + email.subject + "</td>" +
+                            "<td>" + email.timestamp + "</td>" +
+                            "<td>" + email.sent_successfully + "</td></tr>"
+                        $("#email_list_{{ instance.id }} tbody").append(row);
+                    }
+                });
+                jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
+                    $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
+                });
+                $("#email_list_{{ instance.id }}").show();
+            }
+        });
+
+        function clear_errors_{{ instance.id }}() {
+            $("#error_list_{{ instance.id }}").empty();
+        }
+
+        function fetch_email_list_{{ instance.id }}(currentUserId) {
+            var data = {};
+            data["currentUserId"] = currentUserId; 
+            var jqXHR = $.ajax({
+                type: "GET",
+                url: "{% url 'staff:email_list' %}",
+                data: data
+            });
+            return jqXHR;
+        }
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return (false);
+        }
+    </script>
+{% endaddtoblock %}
+
+<ul id="error_list_{{ instance.id }}" class="text-danger"></ul>
+
+<form id="email_instance_{{ instance.id }}" onsubmit="return false;" style="display: none;">
+    <p>Email Instance</p>
+</form>
+
+<div id="email_list_{{ instance.id }}" class="table-responsive" style="display: none;">
+    <table class="table table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>From Email</th>
+                <th>To</th>
+                <th>Subject</th>
+                <th>Timestamp</th>
+                <th>Sent Successfully</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
