@@ -36,9 +36,10 @@ def contact_us(request):
     # Send the message.
     email_message = EmailMessage()
     subject = settings.CONTACT_US_SUBJECT_PREFIX + emailLog.subject
-    dashes = "-------------------------------------------------------------------------------"
-    # body = "%s\n    Go to http://%s%s?emailId=%s to reply.\n%s\n" % (dashes, request.get_host(), "/staff-only/email-log/", emailLog.id, dashes)
-    body = "%s\n    Go to %s?emailId=%s to reply.\n%s\n" % (dashes, request.build_absolute_uri("/staff-only/email-log/"), emailLog.id, dashes)
+    body = "-------------------------------------------------------------------------------"
+    body += "    Message sent from %s on %s." % (emailLog.from_email, emailLog.timestamp.strftime("%Y-%m-%d %I:%M %p"))
+    body += "    Go to %s?emailId=%s to reply.\n" % (request.build_absolute_uri("/staff-only/email-log/"), emailLog.id)
+    body += "-------------------------------------------------------------------------------"
     if emailLog.body == None or emailLog.body == "":
         subject = subject + "<eom>"
     else:
