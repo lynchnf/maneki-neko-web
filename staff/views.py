@@ -9,6 +9,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 def contact_us(request):
+    # Save this email in the database.
     emailLog = EmailLog()
     emailLog.subject = request.POST.get('subject')
     emailLog.body = request.POST.get('message')
@@ -16,6 +17,7 @@ def contact_us(request):
     to_department_id = request.POST.get('to_department')
     to_department = Department.objects.get(pk=to_department_id)
     emailLog.to = to_department.email
+    
     cc = []
     emailLog.cc = None
     cc_departments = Department.objects.filter(chair=True).exclude(id=to_department_id)
@@ -24,31 +26,36 @@ def contact_us(request):
         if emailLog.cc == None:
             emailLog.cc = cc_department.email
         else:
-            emailLog = emailLog + "," + cc_department.email
+            emailLog.cc += "," + cc_department.email
             
     emailLog.department = to_department     
     emailLog.timestamp = timezone.now()
-    emailLog.sent_successfully = True
-
+    emailLog.sent_successfully = False
+    emailLog.save()
+    
+    # Send the message.
     email_message = EmailMessage()
     subject = settings.CONTACT_US_SUBJECT_PREFIX + emailLog.subject
+    dashes = "-------------------------------------------------------------------------------"
+    # body = "%s\n    Go to http://%s%s?emailId=%s to reply.\n%s\n" % (dashes, request.get_host(), "/staff-only/email-log/", emailLog.id, dashes)
+    body = "%s\n    Go to %s?emailId=%s to reply.\n%s\n" % (dashes, request.build_absolute_uri("/staff-only/email-log/"), emailLog.id, dashes)
     if emailLog.body == None or emailLog.body == "":
         subject = subject + "<eom>"
-        emailLog.message = None
+    else:
+        body += emailLog.body
+        
     email_message.subject = subject
-    email_message.body = emailLog.body
-    email_message.from_email = emailLog.from_email
+    email_message.body = body
     email_message.to = [emailLog.to]
     if cc:
         email_message.cc = cc
 
     try:
         email_message.send()
+        emailLog.sent_successfully = True
         emailLog.save()
         return HttpResponse()
     except:
-        emailLog.sent_successfully = False
-        emailLog.save()
         logger.exception("Error sending email. from_email=" + str(emailLog.from_email) + ", to_department=" + str(emailLog.department) + ", subject=" + str(emailLog.subject))
         return HttpResponseServerError()
 
