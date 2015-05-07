@@ -1,10 +1,13 @@
+import logging
+
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from django.utils.translation import ugettext_lazy as _
-from staff.models import Department, EmailLog, Position
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 
-import logging
+from staff.models import  Position
+from staff.models import Department
+
 
 logger = logging.getLogger(__name__)
 
@@ -38,18 +41,19 @@ class StaffListPlugin(CMSPluginBase):
             user["first_name"] = user_model.first_name
             user["last_name"] = user_model.last_name
             user["email"] = user_model.email
-            position_models = Position.objects.filter(user__id = user_model.id).order_by("title", "-department__chair", "department__name")
-            positions = None
+            position_models = Position.objects.filter(user__id=user_model.id).order_by("title", "-department__chair", "department__name")
+            positions = ""
             for position_model in position_models:
-                position = None
-                if position_model.special_title_name != None:
-                    position = position_model.special_title_name
+                pos_name = None
+                if position_model.special_title_name != None and position_model.special_title_name != "":
+                    pos_name = position_model.special_title_name
                 else:
-                    position = position_model.department.name + " " + position_model.get_title_display()
-                if positions == None:
-                    positions = position
+                    pos_name = position_model.department.name + " " + position_model.get_title_display()
+                    
+                if positions == "":
+                    positions = pos_name
                 else:
-                    positions = positions + ", " + position
+                    positions += (", " + pos_name)
             user["positions"] = positions
             users.append(user)
         context['users'] = users

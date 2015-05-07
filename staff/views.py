@@ -1,10 +1,18 @@
-from django.core.mail.message import EmailMessage
-from django.http.response import HttpResponse, HttpResponseServerError, HttpResponseForbidden, HttpResponseNotFound
-from django.utils import timezone
-from staff.models import Department, EmailLog, Position
-from website import settings
 import json
 import logging
+
+from django.core.mail.message import EmailMessage
+from django.http.response import HttpResponse
+from django.http.response import HttpResponseForbidden
+from django.http.response import HttpResponseNotFound
+from django.http.response import HttpResponseServerError
+from django.utils import timezone
+
+from staff.models import Department
+from staff.models import EmailLog
+from staff.models import Position
+from website import settings
+
 
 logger = logging.getLogger(__name__)
 
@@ -36,10 +44,10 @@ def contact_us(request):
     # Send the message.
     email_message = EmailMessage()
     subject = settings.CONTACT_US_SUBJECT_PREFIX + emailLog.subject
-    body = "-------------------------------------------------------------------------------"
-    body += "    Message sent from %s on %s." % (emailLog.from_email, emailLog.timestamp.strftime("%Y-%m-%d %I:%M %p"))
+    body = "-------------------------------------------------------------------------------\n"
+    body += "    Message sent from %s on %s.\n" % (emailLog.from_email, emailLog.timestamp.strftime("%Y-%m-%d %I:%M %p"))
     body += "    Go to %s?emailId=%s to reply.\n" % (request.build_absolute_uri("/staff-only/email-log/"), emailLog.id)
-    body += "-------------------------------------------------------------------------------"
+    body += "-------------------------------------------------------------------------------\n"
     if emailLog.body == None or emailLog.body == "":
         subject = subject + "<eom>"
     else:
@@ -74,12 +82,12 @@ def email_instance(request):
         return HttpResponseNotFound()
     
     # Is the current user con-chair (or vice-chair)? Try to find a position record.
-    position = Position.objects.filter(user__id=request.user.id,title__in=[1,2],department__chair=True)
+    position = Position.objects.filter(user__id=request.user.id, title__in=[1, 2], department__chair=True)
     # If the user is a super-user or a con-chair, then he can see the email.
     # Otherwise, ...
     if not request.user.is_superuser and not position.exists():
         # ... the email must be for a department that the current user is head or second of.
-        position = Position.objects.filter(user__id=request.user.id,title__in=[1,2],department__id=emailLog.department.id)
+        position = Position.objects.filter(user__id=request.user.id, title__in=[1, 2], department__id=emailLog.department.id)
         if not position.exists():
             return HttpResponseForbidden()
         
@@ -110,13 +118,13 @@ def email_list(request):
     email_log = []
             
     # Is the current user con-chair (or vice-chair)? Try to find a position record.
-    position = Position.objects.filter(user__id=request.user.id,title__in=[1,2],department__chair=True)
+    position = Position.objects.filter(user__id=request.user.id, title__in=[1, 2], department__chair=True)
     # If the user is a super-user or a con-chair, show all the emails.
     if request.user.is_superuser or position.exists():
         email_log = EmailLog.objects.order_by("-timestamp")
     else:
         # Otherwise, show just the emails for the departments that the current user is head or second of.
-        departmentIds = Position.objects.filter(user__id=request.user.id,title__in=[1,2]).values('department')
+        departmentIds = Position.objects.filter(user__id=request.user.id, title__in=[1, 2]).values('department')
         email_log = EmailLog.objects.filter(department__id__in=departmentIds).order_by("-timestamp")
 
     emails = []
@@ -138,4 +146,49 @@ def email_list(request):
         return HttpResponse(content, content_type='application/json')
     except:
         logger.exception("Error serializing email list.")
+        return HttpResponseServerError()
+
+def email_reply(request):
+    # If the current user is not logged in, access is denied.
+    if not request.user.is_authenticated() or not request.user.is_active:
+        return HttpResponseForbidden()
+
+    # Does this email actually exist?
+    emailId = request.GET.get("emailId")
+    emailLog = None
+    try:
+        emailLog = EmailLog.objects.get(pk=emailId)
+    except EmailLog.DoesNotExist:
+        return HttpResponseNotFound()
+
+    # Is the current user con-chair (or vice-chair)? Try to find a position record.
+    position = Position.objects.filter(user__id=request.user.id, title__in=[1, 2], department__chair=True)
+    # If the user is a super-user or a con-chair, then he can see the email.
+    # Otherwise, ...
+    if not request.user.is_superuser and not position.exists():
+        # ... the email must be for a department that the current user is head or second of.
+        position = Position.objects.filter(user__id=request.user.id, title__in=[1, 2], department__id=emailLog.department.id)
+        if not position.exists():
+            return HttpResponseForbidden()
+    reply = {}
+    reply["from_email"] = emailLog.to
+    reply["to"] = emailLog.from_email
+    reply["cc"] = emailLog.cc
+    reply["subject"] = "RE: " + settings.CONTACT_US_SUBJECT_PREFIX + emailLog.subject
+    body = "\n"
+    body += "\n"
+    body += "-------------------------------------------------------------------------------\n"
+    body += "    Message sent from %s on %s.\n" % (emailLog.from_email, emailLog.timestamp.strftime("%Y-%m-%d %I:%M %p"))
+    body += "-------------------------------------------------------------------------------\n"
+    body += emailLog.body
+    reply["body"] = body
+
+    context = {}
+    context["reply"] = reply
+
+    try:
+        content = json.dumps(context)
+        return HttpResponse(content, content_type='application/json')
+    except:
+        logger.exception("Error serializing reply for email with id=" + str(emailId))
         return HttpResponseServerError()

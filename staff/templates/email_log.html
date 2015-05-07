@@ -26,11 +26,20 @@
                 $("#email_sent_successfully_{{ instance.id }}").html(email.sent_successfully);
                 $("#email_subject_{{ instance.id }}").html(email.subject);
                 $("#email_body_{{ instance.id }}").html(email.body);
+                
+                // Hook up reply button.
+                $("#email_show_reply_{{ instance.id }}").unbind( "click" );
+                $("#email_show_reply_{{ instance.id }}").click(
+                    function() {
+                        show_email_reply_{{ instance.id }}(emailId);
+                    }
+                );
+
                 $("#email_instance_{{ instance.id }}").show();
             });
             jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
                 if (errorThrown == "FORBIDDEN") {
-                    $("#error_list_{{ instance.id }}").append("<li>Forbidden. You do not have authorization to view this page.</li>");
+                    $("#error_list_{{ instance.id }}").append("<li>Forbidden. You do not have authorization to view this email.</li>");
                 } else if (errorThrown == "NOT FOUND") {
                     $("#error_list_{{ instance.id }}").append("<li>Not found. This email does not exist on our server.</li>");
                 } else {
@@ -65,10 +74,41 @@
             });
         }
 
+        function show_email_reply_{{ instance.id }}(emailId) {
+
+            console.log("show_email_reply(" + emailId + ")"); // DEBUG
+
+            clear_page_{{ instance.id }}();
+            var jqXHR = fetch_email_reply_{{ instance.id }}(emailId);
+            jqXHR.done(function( data, textStatus, jqXHR ) {
+            
+            
+                var reply = data.reply;
+                $("#reply_from_{{ instance.id }}").val(reply.from_email);
+                $("#reply_to_{{ instance.id }}").val(reply.to);
+                $("#reply_cc_{{ instance.id }}").val(reply.cc);
+                $("#reply_subject_{{ instance.id }}").val(reply.subject);
+                $("#reply_body_{{ instance.id }}").val(reply.body);
+            
+            
+                $("#email_reply_{{ instance.id }}").show();
+            });
+            jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
+                if (errorThrown == "FORBIDDEN") {
+                    $("#error_list_{{ instance.id }}").append("<li>Forbidden. You do not have authorization to reply to this email.</li>");
+                } else if (errorThrown == "NOT FOUND") {
+                    $("#error_list_{{ instance.id }}").append("<li>Not found. This email does not exist on our server.</li>");
+                } else {
+                    $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
+                }
+            });
+        }
+
         function clear_page_{{ instance.id }}() {
             clear_errors_{{ instance.id }}();
             $("#email_instance_{{ instance.id }}").hide();
             $("#email_list_{{ instance.id }}").hide();
+            $("#email_reply_{{ instance.id }}").hide();
         }
         
         function clear_errors_{{ instance.id }}() {
@@ -93,6 +133,17 @@
             });
             return jqXHR;
         }
+        
+        function fetch_email_reply_{{ instance.id }}(emailId) {
+            var data = {};
+            data["emailId"] = emailId;
+            var jqXHR = $.ajax({
+                type: "GET",
+                url: "{% url 'staff:email_reply' %}",
+                data: data
+            });
+            return jqXHR;
+        }
 
         function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
@@ -113,7 +164,7 @@
 <form id="email_instance_{{ instance.id }}" class="form-horizontal" onsubmit="return false;" style="display: none;">
     {% csrf_token %}
     <div class="form-group">
-        <label class="col-sm-2 control-label" for="from_email_{{ instance.id }}">From Email</label>
+        <label class="col-sm-2 control-label" for="from_email_{{ instance.id }}">From</label>
         <div class="col-sm-4">        
             <p class="form-control-static" id="from_email_{{ instance.id }}"></p>
         </div>
@@ -129,11 +180,11 @@
     <div class="form-group">
         <label class="col-sm-2 control-label" for="email_timestamp_{{ instance.id }}">Timestamp</label>
         <div class="col-sm-3">        
-            <p class="form-control-static" id="email_timestamp_{{ instance.id }}">foo</p>
+            <p class="form-control-static" id="email_timestamp_{{ instance.id }}"></p>
         </div>
         <label class="col-sm-3 control-label" for="email_sent_successfully_{{ instance.id }}">Sent Successfully</label>
         <div class="col-sm-4">        
-            <p class="form-control-static" id="email_sent_successfully_{{ instance.id }}">bar</p>
+            <p class="form-control-static" id="email_sent_successfully_{{ instance.id }}"></p>
         </div>
     </div>
     <div class="form-group">
@@ -148,8 +199,8 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button id="reply_{{ instance.id }}" class="btn btn-primary">Reply</button>
-            <button id="list_{{ instance.id }}" class="btn btn-default" onclick="show_email_list_{{ instance.id }}();">Email List</button>
+            <button id="email_show_reply_{{ instance.id }}" class="btn btn-primary">Reply</button>
+            <button class="btn btn-default" onclick="show_email_list_{{ instance.id }}();">Email List</button>
         </div>
     </div>
 </form>
@@ -169,3 +220,29 @@
         </tbody>
     </table>
 </div>
+
+<form id="email_reply_{{ instance.id }}" onsubmit="return false;" style="display: none;">
+    {% csrf_token %}
+    <div class="form-group" id="reply_from_form-group_{{ instance.id }}">
+        <label class="control-label" for="reply_from_{{ instance.id }}">From</label>
+        <input type="text" class="form-control" id="reply_from_{{ instance.id }}" name="reply_from" />
+    </div>
+    <div class="form-group" id="reply_to_form-group_{{ instance.id }}">
+        <label class="control-label" for="reply_to_{{ instance.id }}">To</label>
+        <input type="text" class="form-control" id="reply_to_{{ instance.id }}" name="reply_to" />
+    </div>
+    <div class="form-group" id="reply_cc_form-group_{{ instance.id }}">
+        <label class="control-label" for="reply_cc_{{ instance.id }}">CC</label>
+        <input type="text" class="form-control" id="reply_cc_{{ instance.id }}" name="reply_cc" />
+    </div>
+    <div class="form-group" id="reply_subject_form-group_{{ instance.id }}">
+        <label class="control-label" for="reply_subject_{{ instance.id }}">Subject</label>
+        <input type="text" class="form-control" id="reply_subject_{{ instance.id }}" name="reply_subject" />
+    </div>
+    <div class="form-group" id="reply_body_form-group_{{ instance.id }}">
+        <label class="control-label" for="reply_body_{{ instance.id }}">Message</label>
+        <textarea type="text" class="form-control" id="reply_body_{{ instance.id }}" name="reply_body" rows="10" ></textarea>
+    </div>
+    <button id="reply_send_{{ instance.id }}" class="btn btn-primary">Send</button>
+    <button id="reply_cancel_{{ instance.id }}" class="btn btn-default">Cancel</button>
+</form>
