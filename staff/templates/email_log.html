@@ -29,11 +29,9 @@
                 
                 // Hook up reply button.
                 $("#email_show_reply_{{ instance.id }}").unbind( "click" );
-                $("#email_show_reply_{{ instance.id }}").click(
-                    function() {
-                        show_email_reply_{{ instance.id }}(emailId);
-                    }
-                );
+                $("#email_show_reply_{{ instance.id }}").click(function() {
+                    show_email_reply_{{ instance.id }}(emailId);
+                });
 
                 $("#email_instance_{{ instance.id }}").show();
             });
@@ -75,22 +73,38 @@
         }
 
         function show_email_reply_{{ instance.id }}(emailId) {
-
-            console.log("show_email_reply(" + emailId + ")"); // DEBUG
-
             clear_page_{{ instance.id }}();
             var jqXHR = fetch_email_reply_{{ instance.id }}(emailId);
             jqXHR.done(function( data, textStatus, jqXHR ) {
-            
-            
                 var reply = data.reply;
+                $("#reply_department_id_{{ instance.id }}").val(reply.department_id);
                 $("#reply_from_{{ instance.id }}").val(reply.from_email);
                 $("#reply_to_{{ instance.id }}").val(reply.to);
                 $("#reply_cc_{{ instance.id }}").val(reply.cc);
                 $("#reply_subject_{{ instance.id }}").val(reply.subject);
                 $("#reply_body_{{ instance.id }}").val(reply.body);
-            
-            
+
+                // Hook up send button.
+                $("#reply_send_{{ instance.id }}").unbind( "click" );
+                $("#reply_send_{{ instance.id }}").click(function() {
+                    if (validate_reply_{{ instance.id }}()) {
+                        var jqXHR = send_reply_{{ instance.id }}();
+                        jqXHR.done(function( data, textStatus, jqXHR ) {
+                            alert("Your email has been sent.");
+                            show_email_list_{{ instance.id }}();
+                        });
+                        jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
+                            $("#error_list_{{ instance.id }}").append("<li>Internal server error. Please try again later.</li>");
+                        });
+                    }
+                });
+
+                // Hook up cancel button.
+                $("#reply_cancel_{{ instance.id }}").unbind( "click" );
+                $("#reply_cancel_{{ instance.id }}").click(function() {
+                    show_email_instance_{{ instance.id }}(emailId);
+                });
+
                 $("#email_reply_{{ instance.id }}").show();
             });
             jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {
@@ -113,8 +127,69 @@
         
         function clear_errors_{{ instance.id }}() {
             $("#error_list_{{ instance.id }}").empty();
+            $("#reply_from_form-group_{{ instance.id }}").removeClass("has-error");
+            $("#reply_to_form-group_{{ instance.id }}").removeClass("has-error");
+            $("#reply_cc_form-group_{{ instance.id }}").removeClass("has-error");
+            $("#reply_subject_form-group_{{ instance.id }}").removeClass("has-error");
+            $("#reply_body_form-group_{{ instance.id }}").removeClass("has-error");
         }
-        
+
+        function validate_reply_{{ instance.id }}() {
+            // Intialize errors.
+            clear_errors_{{ instance.id }}();
+            var errors = [];
+
+            // Validate from email.
+            if ($("#reply_from_{{ instance.id }}").val() == "") {
+                errors[errors.length] = "From Email may not be blank.";
+                $("#reply_from_form-group_{{ instance.id }}").addClass("has-error");
+            } else if (!isValidEmailAddress($("#reply_from_{{ instance.id }}").val())) {
+                errors[errors.length] = "From Email must be a valid email address.";
+                $("#reply_from_form-group_{{ instance.id }}").addClass("has-error");
+            }
+            
+            // Validate to emails.
+            if ($("#reply_to_{{ instance.id }}").val() != "" &&
+                    !isValidEmailList($("#reply_to_{{ instance.id }}").val())) {
+                errors[errors.length] = "To Email must be blank or a comma separated list of valid email addresses.";
+                $("#reply_to_form-group_{{ instance.id }}").addClass("has-error");
+            }
+
+            // Validate cc emails.
+            if ($("#reply_cc_{{ instance.id }}").val() != "" &&
+                    !isValidEmailList($("#reply_cc_{{ instance.id }}").val())) {
+                errors[errors.length] = "CC Email must be blank or a comma separated list of valid email addresses.";
+                $("#reply_cc_form-group_{{ instance.id }}").addClass("has-error");
+            }
+            
+            // Must enter to or cc email.
+            if ($("#reply_to_{{ instance.id }}").val() == "" &&
+                    $("#reply_cc_{{ instance.id }}").val() == "") {
+                errors[errors.length] = "Both To and CC Emails may not be blank.";
+                $("#reply_to_form-group_{{ instance.id }}").addClass("has-error");
+                $("#reply_cc_form-group_{{ instance.id }}").addClass("has-error");
+            }
+
+            // Validate subject.
+            if ($("#reply_subject_{{ instance.id }}").val() == "") {
+                errors[errors.length] = "Subject may not be blank.";
+                $("#reply_subject_form-group_{{ instance.id }}").addClass("has-error");
+            }
+
+            // Validate subject.
+            if ($("#reply_body_{{ instance.id }}").val() == "") {
+                errors[errors.length] = "Message should not be blank.";
+                $("#reply_body_form-group_{{ instance.id }}").addClass("has-error");
+            }
+
+            // List the errors.
+            for (i = 0; i < errors.length; ++i) {
+                $("#error_list_{{ instance.id }}").append("<li>" + errors[i] + "</li>");
+            }
+
+            return errors.length == 0;
+        }
+
         function fetch_email_instance_{{ instance.id }}(emailId) {
             var data = {};
             data["emailId"] = emailId;
@@ -145,6 +220,16 @@
             return jqXHR;
         }
 
+        function send_reply_{{ instance.id }}() {
+            var data = $("#email_reply_{{ instance.id }}").serialize();
+            var jqXHR = $.ajax({
+                type: "POST",
+                url: "{% url 'staff:send_email_reply' %}",
+                data: data
+            });
+            return jqXHR;
+        }
+
         function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
             var vars = query.split("&");
@@ -156,6 +241,16 @@
             }
             return (false);
         }
+        
+        function isValidEmailAddress(emailAddress) {
+            var pattern = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
+            return pattern.test(emailAddress);
+        }        
+
+        function isValidEmailList(emailList) {
+            var pattern = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}(,[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})*$/i);
+            return pattern.test(emailList);
+        }        
     </script>
 {% endaddtoblock %}
 
@@ -223,6 +318,7 @@
 
 <form id="email_reply_{{ instance.id }}" onsubmit="return false;" style="display: none;">
     {% csrf_token %}
+    <input type="hidden" id="reply_department_id_{{ instance.id }}" name="department_id" />
     <div class="form-group" id="reply_from_form-group_{{ instance.id }}">
         <label class="control-label" for="reply_from_{{ instance.id }}">From</label>
         <input type="text" class="form-control" id="reply_from_{{ instance.id }}" name="reply_from" />

@@ -171,6 +171,7 @@ def email_reply(request):
         if not position.exists():
             return HttpResponseForbidden()
     reply = {}
+    reply["department_id"] = emailLog.department.id
     reply["from_email"] = emailLog.to
     reply["to"] = emailLog.from_email
     reply["cc"] = emailLog.cc
@@ -191,4 +192,40 @@ def email_reply(request):
         return HttpResponse(content, content_type='application/json')
     except:
         logger.exception("Error serializing reply for email with id=" + str(emailId))
+        return HttpResponseServerError()
+    
+def send_email_reply(request):
+    # Save this email in the database.
+    emailLog = EmailLog()
+    emailLog.subject = request.POST.get('reply_subject')
+    emailLog.body = request.POST.get('reply_body')
+    emailLog.from_email = request.POST.get('reply_from')
+    emailLog.to = request.POST.get('reply_to')
+    emailLog.cc = request.POST.get('reply_cc')
+    reply_department_id = request.POST.get('department_id')
+    reply_department = Department.objects.get(pk=reply_department_id)
+    emailLog.department = reply_department     
+    emailLog.timestamp = timezone.now()
+    emailLog.sent_successfully = False
+    emailLog.save()
+    
+    # Send the message.
+    email_message = EmailMessage()
+    email_message.subject = emailLog.subject
+    email_message.body = emailLog.body
+    email_message.from_email = emailLog.from_email
+
+    if emailLog.to:
+        email_message.to = emailLog.to.split(',')
+
+    if emailLog.cc:
+        email_message.cc = emailLog.cc.split(',')
+
+    try:
+        email_message.send()
+        emailLog.sent_successfully = True
+        emailLog.save()
+        return HttpResponse()
+    except:
+        logger.exception("Error sending email. from_email=" + str(emailLog.from_email) + ", to_department=" + str(emailLog.department) + ", subject=" + str(emailLog.subject))
         return HttpResponseServerError()
