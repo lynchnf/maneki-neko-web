@@ -19,6 +19,7 @@ class Position(models.Model):
     user = models.ForeignKey(User)     
     department = models.ForeignKey(Department)     
     title = models.IntegerField(choices=TITLE_CHOICES)
+    special_title_name = models.CharField(max_length=50, blank=True, null=True)
 
     def __unicode__(self):
         return "%s - %s (%s)" % (self.department.name, self.user.get_full_name(), self.get_title_display())    
@@ -34,3 +35,16 @@ class ContactUsLog(models.Model):
     
     def __unicode__(self):
         return "%s: %s" % (self.to_department, self.subject)
+    
+class EmailLog(models.Model):
+    subject = models.CharField(max_length=255)
+    body = models.TextField(blank=True, null=True)
+    from_email = models.EmailField()
+    to = models.CharField(max_length=255, blank=True, null=True)
+    cc = models.CharField(max_length=255, blank=True, null=True)
+    department = models.ForeignKey(Department, blank=True, null=True)     
+    timestamp = models.DateTimeField()
+    sent_successfully = models.BooleanField()
+
+    def __unicode__(self):
+        return "%s: %s" % (self.from_email, self.subject)
