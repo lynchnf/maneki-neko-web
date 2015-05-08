@@ -19,4 +19,4 @@ On a regular basis (at least weekly, maybe daily), log in to your server as webm
   - `cd /var/www/maneki-neko-web`
   - `sudo tar cfz mnwebmedia-yyyy-mm-dd.tgz media`
   - `sudo chown webmaster:webmaster mnwebmedia-yyyy-mm-dd.tgz`
-  - `mv mnwebmedia-yyyy-mm-dd.tgz ~`
+  - `sudo mv mnwebmedia-yyyy-mm-dd.tgz ~`
