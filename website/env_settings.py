@@ -31,7 +31,7 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_PORT = 25
-DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+DEFAULT_FROM_EMAIL = 'donotreply@example.com'
 
 LOGGING = {
     'version': 1,
@@ -56,7 +56,15 @@ LOGGING = {
         }
     },
     'loggers': {
+        'website': {
+            'level': 'DEBUG',
+            'handlers': ['console','file']
+        },
         'analytics': {
+            'level': 'DEBUG',
+            'handlers': ['console','file']
+        },
+        'headtags': {
             'level': 'DEBUG',
             'handlers': ['console','file']
         },
@@ -69,10 +77,6 @@ LOGGING = {
             'handlers': ['console','file']
         },
         'staff': {
-            'level': 'DEBUG',
-            'handlers': ['console','file']
-        },
-        'website': {
             'level': 'DEBUG',
             'handlers': ['console','file']
         },
