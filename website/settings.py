@@ -154,6 +154,7 @@ INSTALLED_APPS = (
     'analytics',
     'headtags',
     'navigation',
+    'news',
     'socialmedia',
     'staff'
 )

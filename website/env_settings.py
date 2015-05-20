@@ -72,6 +72,10 @@ LOGGING = {
             'level': 'DEBUG',
             'handlers': ['console','file']
         },
+        'news': {
+            'level': 'DEBUG',
+            'handlers': ['console','file']
+        },
         'socialmedia': {
             'level': 'DEBUG',
             'handlers': ['console','file']
