@@ -5,8 +5,8 @@ from cms.plugin_pool import plugin_pool
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
-from staff.models import  Position
 from staff.models import Department
+from staff.models import Position
 
 
 logger = logging.getLogger(__name__)
