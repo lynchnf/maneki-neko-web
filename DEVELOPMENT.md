@@ -69,13 +69,13 @@ Tested on Ubuntu 14.04.1 LTS (64 bit).
   - `python manage.py syncdb --all --noinput`
   - `python manage.py migrate --fake`
   - `python manage.py createsuperuser`
-  - user name = admin
-  - email = admin@example.com
-  - password = admin
+  - user name = webmaster
+  - email = webmaster@example.com
+  - password = password
   - `python manage.py runserver`
   - Browse to localhost:8000
   - Click the "adding pages" link.
-  - Log in with user = admin, password = admin
+  - Log in with user = webmaster, password = password
   - Add home page and save.
 
 12. Restart Eclipse.

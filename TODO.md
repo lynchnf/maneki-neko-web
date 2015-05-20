@@ -4,9 +4,8 @@ Thing To Do
 Things Needed Now
 -----------------
 
-* Google Apps
-  - Figure out how to make Google Apps work.
-  - Move from Mandrill to Google Apps.
+* Find and figure out how to use a good news plugin.
+  - Integrate with MailChimmp.
 * Get content for Lucky Cat page.
 * Online registration plugin.
   - Integrate with Paypal.
@@ -15,10 +14,9 @@ Things Needed Now
 Things Needed Later
 -------------------
 
-* Find and figure out how to use a good news plugin.
-  - Integrate with MailChimmp.
-* Improve documentation for setup of development and production environments.
-* Add operations documentation for backups, etc.
+* Google Apps
+  - Move from Mandrill to Google Apps.
+* Improve documentation for setup of production environment.
 * Style and color the lucky cat webpages.
 * Vendor registration.
 * Art Show registration.
@@ -28,18 +26,20 @@ Things Nice to Have Someday
 
 * Add notifications (somehow).
 * Find a better image plugin, one that uses filer.
-* Write an out going mail plugin.
-* Write a staff list plugin.
-* Write an email log viewer plugin.
 * Unit tests.
 * Improve fabric file.
   - Deploy to staging.
   - Increment version when deploy to production.
-* Training video.
+* Training videos.
 
 Things Done
 -----------
 
+* Write an out going mail plugin.
+* Write a staff list plugin.
+* Write an email log viewer plugin.
+* Add operations documentation for backups, etc.
+* Improve documentation for setup of development environment.
 * Google Analytics plugin.
   - Create google account.
 * Figure out how to hard code menu plugin in template.
