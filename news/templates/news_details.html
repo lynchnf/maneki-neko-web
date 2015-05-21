@@ -3,5 +3,7 @@
 {% for story in stories %}
     <a name="{{ story.id }}"></a>
     <h2>{{ story.title }} <small>{{ story.publish_date|date:"SHORT_DATE_FORMAT" }}</small></h2>
-    <div>{{ story.content|safe }}</div>
+    {% if story.content %}
+        <div>{{ story.content|safe }}</div>
+    {% endif %}
 {% endfor %}

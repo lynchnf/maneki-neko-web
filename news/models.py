@@ -1,5 +1,3 @@
-from datetime import date
-
 from cms.models.fields import PageField
 from cms.models.pluginmodel import CMSPlugin
 from django.db import models
@@ -16,7 +14,7 @@ class Story(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True, null=True)
     status = models.IntegerField(default=1, choices=STATUS_CHOICES)
-    publish_date = models.DateField(default=date.today, blank=True, null=True)
+    publish_date = models.DateField(blank=True, null=True)
     
     class Meta:
         verbose_name = "news story"
