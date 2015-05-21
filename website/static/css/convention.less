@@ -23,8 +23,8 @@
 
 @content-background-color: #ffffff;
 @content-text-color: #333333;
-@content-background-accent-color: @content-text-color;
-@content-text-accent-color: @content-background-color;
+@content-background-accent-color: #cccccc;
+@content-text-accent-color: #000000;
 @content-background-muted-color: transparent;
 @content-text-muted-color: lighten(@content-text-color, 40%);
 
@@ -243,7 +243,15 @@ body {
 .content .container {
     background-color: @content-background-color;
     color: @content-text-color;
-    
+
+    a {
+        color: @content-text-muted-color;
+    }
+
+    a:hover {
+        color: @content-text-accent-color;
+    }
+
     .home-carousel {}
     
     .social-links {
@@ -251,7 +259,22 @@ body {
         margin-top: 20px;
     }
     
-    .news {}
+    .news {
+        ul {
+            list-style-type: none;
+            margin-bottom: 0;
+            padding-left: 0;
+            li {
+                margin-bottom: 10px;
+                a {
+                    color: @content-text-color;
+                }
+                a:hover {
+                    color: @content-text-accent-color;
+                }
+            }
+        }
+    }
     
     pre {
         background-color: @content-background-color;

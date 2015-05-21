@@ -6,7 +6,10 @@
 {% block base-header %}
     {% addtoblock "css" %}
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Quintessential' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/convention.css' %}" />
+        <link rel="stylesheet/less" href="{% static 'css/convention.less' %}" />
+    {% endaddtoblock %}
+    {% addtoblock "js" %}
+        <script src="{% static 'js/less.js' %}"></script>
     {% endaddtoblock %}
 
     {% addtoblock "meta" %}

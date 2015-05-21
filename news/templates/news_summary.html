@@ -1,0 +1,7 @@
+{% load cms_tags %}
+
+<ul>
+    {% for story in stories %}
+        <li>{{ story.publish_date|date:"SHORT_DATE_FORMAT" }} - <a href="{% page_url instance.news_details_page %}#{{ story.id }}">{{ story.title }}</a></li>
+    {% endfor %}
+</ul>

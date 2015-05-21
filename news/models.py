@@ -1,5 +1,7 @@
 from datetime import date
 
+from cms.models.fields import PageField
+from cms.models.pluginmodel import CMSPlugin
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -22,3 +24,7 @@ class Story(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class NewsSummary(CMSPlugin):
+    max_stories = models.IntegerField("Maximum Stories to Show", default=5)
+    news_details_page = PageField()

@@ -182,9 +182,29 @@ body {
   background-color: #ffffff;
   color: #333333;
 }
+.content .container a {
+  color: #999999;
+}
+.content .container a:hover {
+  color: #000000;
+}
 .content .container .social-links {
   text-align: center;
   margin-top: 20px;
+}
+.content .container .news ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.content .container .news ul li {
+  margin-bottom: 10px;
+}
+.content .container .news ul li a {
+  color: #333333;
+}
+.content .container .news ul li a:hover {
+  color: #000000;
 }
 .content .container pre {
   background-color: #ffffff;
