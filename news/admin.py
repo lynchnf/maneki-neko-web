@@ -33,43 +33,98 @@ class StoryAdmin(admin.ModelAdmin):
         TextField: {'widget': TextEditorWidget}                           
     }
     ordering = ['status', '-publish_date', '-id']
-    readonly_fields = ("status",)
+    readonly_fields = ("status", "email_timestamp")
     search_fields = ['title', 'content']              
-
-    def has_delete_permission(self, request, obj=None):
-        return False
 
     def get_actions(self, request):
         actions = super(StoryAdmin, self).get_actions(request)
         del actions['delete_selected']
         return actions
 
+    def has_delete_permission(self, request, obj=None):
+        return False
+
     def make_draft(self, request, queryset):
+        success_count = 0
+        skip_count = 0
         for obj in queryset:
-            obj.status = 1
-            obj.save()
-    make_draft.short_description = "Draft selected news stories"
+            if not obj.email_timestamp:
+                obj.status = 1
+                obj.save()
+                success_count += 1
+            else:
+                skip_count += 1
+        success_msg = "No news stories were unpublished."
+        if success_count == 1:
+            success_msg = "Successfully unpublished 1 news story."
+        elif success_count > 1:
+            success_msg = "Successfully unpublished %s news stories." % (success_count)
+        self.message_user(request, success_msg)
+        if skip_count > 0:
+            if skip_count == 1:
+                skip_msg = "Skipped 1 news story."
+            else:
+                skip_msg = "Skipped %s news stories." % (skip_count)
+            self.message_user(request, skip_msg)
             
     def make_publish(self, request, queryset):
+        success_count = 0
         for obj in queryset:
             obj.status = 2
             if not obj.publish_date:
                 obj.publish_date = datetime.today()
             obj.save()
-    make_publish.short_description = "Publish selected news stories"
+            success_count += 1
+        success_msg = "No news stories were published."
+        if success_count == 1:
+            success_msg = "Successfully published 1 news story."
+        elif success_count > 1:
+            success_msg = "Successfully published %s news stories." % (success_count)
+        self.message_user(request, success_msg)
             
     def make_email(self, request, queryset):
+        success_count = 0
+        skip_count = 0
         for obj in queryset:
-            obj.status = 3
-            if not obj.publish_date:
-                obj.publish_date = datetime.today()
-            obj.save()
-    make_email.short_description = "Mass email selected news stories"
+            if not obj.email_timestamp:
+                obj.status = 3
+                if not obj.publish_date:
+                    obj.publish_date = datetime.today()
+                if not obj.email_timestamp:
+                    obj.email_timestamp = datetime.now()
+                obj.save()
+                success_count += 1
+            else:
+                skip_count += 1
+        success_msg = "No news stories were emailed."
+        if success_count == 1:
+            success_msg = "Successfully emailed 1 news story."
+        elif success_count > 1:
+            success_msg = "Successfully emailed %s news stories." % (success_count)
+        self.message_user(request, success_msg)
+        if skip_count > 0:
+            if skip_count == 1:
+                skip_msg = "Skipped 1 news story."
+            else:
+                skip_msg = "Skipped %s news stories." % (skip_count)
+            self.message_user(request, skip_msg)
             
     def make_archive(self, request, queryset):
+        success_count = 0
         for obj in queryset:
             obj.status = 4
             obj.save()
+            success_count += 1
+        success_msg = "No news stories were archived."
+        if success_count == 1:
+            success_msg = "Successfully archived 1 news story."
+        elif success_count > 1:
+            success_msg = "Successfully archived %s news stories." % (success_count)
+        self.message_user(request, success_msg)
+
+    make_draft.short_description = "Unpublish selected news stories"
+    make_publish.short_description = "Publish selected news stories"
+    make_email.short_description = "Mass email selected news stories"
     make_archive.short_description = "Archive selected news stories"
 
 admin.site.register(Story, StoryAdmin)

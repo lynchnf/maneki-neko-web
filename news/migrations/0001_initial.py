@@ -14,7 +14,8 @@ class Migration(SchemaMigration):
             ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('content', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('status', self.gf('django.db.models.fields.IntegerField')(default=1)),
-            ('publish_date', self.gf('django.db.models.fields.DateField')(default=datetime.date.today, null=True, blank=True)),
+            ('publish_date', self.gf('django.db.models.fields.DateField')(null=True, blank=True)),
+            ('email_timestamp', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
         ))
         db.send_create_signal(u'news', ['Story'])
 
@@ -98,8 +99,9 @@ class Migration(SchemaMigration):
         u'news.story': {
             'Meta': {'object_name': 'Story'},
             'content': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
+            'email_timestamp': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'publish_date': ('django.db.models.fields.DateField', [], {'default': 'datetime.date.today', 'null': 'True', 'blank': 'True'}),
+            'publish_date': ('django.db.models.fields.DateField', [], {'null': 'True', 'blank': 'True'}),
             'status': ('django.db.models.fields.IntegerField', [], {'default': '1'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },

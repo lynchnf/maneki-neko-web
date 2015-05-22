@@ -15,6 +15,7 @@ class Story(models.Model):
     content = models.TextField(blank=True, null=True)
     status = models.IntegerField(default=1, choices=STATUS_CHOICES)
     publish_date = models.DateField(blank=True, null=True)
+    email_timestamp = models.DateTimeField(blank=True, null=True)
     
     class Meta:
         verbose_name = "news story"
