@@ -1,11 +1,10 @@
-import logging
-
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
-
-from news.models import Story, NewsSummary
-
+import logging
+from news.models import Story
+from news.models import NewsSummary
+from news.models import NewsSignUp
 
 logger = logging.getLogger(__name__)
 
@@ -45,5 +44,15 @@ class NewsSummaryPlugin(CMSPluginBase):
         context['instance'] = instance
         return context
 
+class NewsSignUpPlugin(CMSPluginBase):
+    model = NewsSignUp
+    name = _("News Sign Up")
+    render_template = "news_sign_up.html"
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        return context
+
 plugin_pool.register_plugin(NewsDetailsPlugin)
 plugin_pool.register_plugin(NewsSummaryPlugin)
+plugin_pool.register_plugin(NewsSignUpPlugin)

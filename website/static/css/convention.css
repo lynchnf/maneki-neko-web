@@ -3,6 +3,12 @@ body {
   background-color: #ffffff;
   font-family: Verdana, Geneva, sans-serif;
 }
+a {
+  color: #999999;
+}
+a:hover {
+  color: #000000;
+}
 /* Navigation Styles */
 .navbar {
   margin-bottom: 0;
@@ -181,12 +187,6 @@ body {
 .content .container {
   background-color: #ffffff;
   color: #333333;
-}
-.content .container a {
-  color: #999999;
-}
-.content .container a:hover {
-  color: #000000;
 }
 .content .container .social-links {
   text-align: center;

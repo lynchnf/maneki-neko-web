@@ -205,7 +205,7 @@ CMS_PLACEHOLDER_CONF = {
         'plugins': ['SocialLinkPlugin']
     },
     'news': {
-        'plugins': ['TextPlugin', 'NewsSummaryPlugin'],
+        'plugins': ['TextPlugin', 'NewsSummaryPlugin', 'NewsSignUpPlugin'],
         'text_only_plugins': ['LinkPlugin']
     },
     'footer-text': {

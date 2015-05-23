@@ -27,6 +27,13 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'news', ['NewsSummary'])
 
+        # Adding model 'NewsSignUp'
+        db.create_table(u'news_newssignup', (
+            (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
+            ('url', self.gf('django.db.models.fields.URLField')(max_length=200)),
+        ))
+        db.send_create_signal(u'news', ['NewsSignUp'])
+
 
     def backwards(self, orm):
         # Deleting model 'Story'
@@ -34,6 +41,9 @@ class Migration(SchemaMigration):
 
         # Deleting model 'NewsSummary'
         db.delete_table(u'news_newssummary')
+
+        # Deleting model 'NewsSignUp'
+        db.delete_table(u'news_newssignup')
 
 
     models = {
@@ -89,6 +99,11 @@ class Migration(SchemaMigration):
             'default_width': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slot': ('django.db.models.fields.CharField', [], {'max_length': '255', 'db_index': 'True'})
+        },
+        u'news.newssignup': {
+            'Meta': {'object_name': 'NewsSignUp', '_ormbases': ['cms.CMSPlugin']},
+            u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
+            'url': ('django.db.models.fields.URLField', [], {'max_length': '200'})
         },
         u'news.newssummary': {
             'Meta': {'object_name': 'NewsSummary', '_ormbases': ['cms.CMSPlugin']},

@@ -27,3 +27,9 @@ class Story(models.Model):
 class NewsSummary(CMSPlugin):
     max_stories = models.IntegerField("Maximum Stories to Show", default=5)
     news_details_page = PageField()
+
+class NewsSignUp(CMSPlugin):
+    url = models.URLField("Sign Up Form URL")
+
+    def __unicode__(self):
+        return self.url
